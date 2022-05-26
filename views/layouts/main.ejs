@@ -24,10 +24,12 @@
 
         <!-- Nav links -->
         <ul class="nav__links">
-          <li class="nav__link"><a href="/">Home</a></li>
-          <li class="nav__link"><a href="/">News</a></li>
-          <li class="nav__link"><a href="/">Press</a></li>
-          <li class="nav__link"><a href="/">Regulatory press</a></li>
+          <li class="nav__link nav__link--current"><a href="/">Home</a></li>
+          <li class="nav__link"><a href="/news">News</a></li>
+          <li class="nav__link"><a href="/press">Press</a></li>
+          <li class="nav__link">
+            <a href="/regulatory-press">Regulatory press</a>
+          </li>
         </ul>
 
         <!-- Search -->
@@ -36,23 +38,28 @@
             <input
               type="search"
               name="searchTerm"
-              placeholder="Search..."
+              placeholder="Search articles..."
               aria-label="Search"
             />
           </form>
         </div>
+        <!-- /Search -->
       </header>
-      <!-- /Header -->
+    </div>
+    <!-- /Header -->
 
-      <!-- Main -->
+    <!-- Main -->
+    <div class="container--main">
       <main><%- body -%></main>
-      <!-- /Main -->
+    </div>
+    <!-- /Main -->
 
-      <!-- Footer -->
+    <!-- Footer -->
+    <div class="container">
       <footer>
         <p>Built by Erikas</p>
       </footer>
-      <!-- /Footer -->
     </div>
+    <!-- /Footer -->
   </body>
 </html>

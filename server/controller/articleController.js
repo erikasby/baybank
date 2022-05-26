@@ -2,7 +2,7 @@
 
 exports.homepage = async (req, res) => {
   try {
-    res.render('index', {title: 'SEB Workers - Homepage'});
+    res.render('index', {title: 'SEB Base - Homepage'});
   } catch (error) {
     console.log(error);
   }

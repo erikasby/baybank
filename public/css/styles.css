@@ -1,5 +1,143 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
+
+*:focus {
+  outline: 2px solid var(--brand-main);
+}
+
+:root {
+  --brand-main: #8aca33;
+  --brand-secondary: #0092e1;
+
+  --gray-900: #111827;
+  --gray-700: #374151;
+  --gray-500: #6b7280;
+  --gray-400: #9ca3af;
+  --gray-300: #d1d5db;
+  --gray-200: #e5e7eb;
+}
+
+a {
+  text-decoration: none;
+  color: var(--gray-900);
+}
+
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.container {
+  /* max-width: 100rem; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.container--main {
+  max-width: 100rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Header */
+.nav {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.nav__brand img {
+  display: block;
+  border: none;
+  width: 100%;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav__link {
+  margin-left: 2rem;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.nav__link a {
+  padding: 2rem 0;
+}
+
+.nav__link:hover {
+  border-bottom: 1px solid var(--brand-main);
+  margin-bottom: -1px;
+  cursor: pointer;
+}
+
+.nav__link:hover > a {
+  color: var(--brand-main);
+}
+
+.nav__link--current a {
+  color: var(--brand-main);
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 auto;
+}
+
+.search input {
+  border: none;
+  outline: 1px solid var(--brand-secondary);
+  border-radius: 2px;
+  padding: 0.5rem 1rem;
+  color: var(--gray-900);
+  margin-right: 2rem;
+  width: 40rem;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.search input:focus {
+  background-color: #0092e1;
+  color: #fff;
+  outline: none;
+}
+
+.search input::placeholder {
+  color: #0092e1;
+}
+/* /Header */
+
+/* Main */
+main {
+  display: flex;
+}
+/* /Main */
+
+/* Footer */
+footer {
+}
+/* /Footer */
