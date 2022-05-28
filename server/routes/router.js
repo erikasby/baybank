@@ -3,6 +3,7 @@ const router = express.Router();
 const articleController = require('../controller/articleController');
 
 // Routes
-router.get('/', articleController.homepage);
+router.get('/', articleController.home);
+router.get('/press-and-news', articleController.pressAndNews);
 
 module.exports = router;
