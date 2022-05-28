@@ -1,18 +1,30 @@
 // Controller - controls the queries and functionality of a page
 
-const {restart} = require('nodemon');
-
 exports.home = async (req, res, next) => {
   try {
-    res.render('index', {title: 'SEB Base - Homepage'});
+    res.render('index', {title: 'SEB Base - Homepage', current: 'Home'});
   } catch (error) {
     console.log(error);
   }
 };
 
-exports.pressAndNews = async (req, res, next) => {
+exports.news = async (req, res, next) => {
   try {
-    res.render('pressAndNews', {title: 'SEB Base - Press and News'});
+    res.render('news', {
+      title: 'SEB Base - News',
+      current: 'News',
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+exports.press = async (req, res, next) => {
+  try {
+    res.render('press', {
+      title: 'SEB Base - Press',
+      current: 'Press',
+    });
   } catch (error) {
     console.log(error);
   }

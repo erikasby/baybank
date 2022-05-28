@@ -4,6 +4,7 @@ const articleController = require('../controller/articleController');
 
 // Routes
 router.get('/', articleController.home);
-router.get('/press-and-news', articleController.pressAndNews);
+router.get('/news', articleController.news);
+router.get('/press', articleController.press);
 
 module.exports = router;

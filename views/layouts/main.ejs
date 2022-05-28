@@ -31,9 +31,12 @@
 
         <!-- Nav links -->
         <ul class="nav__links">
-          <li class="nav__link nav__link--current"><a href="/">Home</a></li>
-          <li class="nav__link">
-            <a href="/press-and-news">Press and News</a>
+          <li class="nav__link <%= current === 'Home' ? "nav__link--current" : '' %>"><a href="/">Home</a></li>
+          <li class="nav__link <%= current === 'News' ? "nav__link--current" : '' %>">
+            <a href="/news">News</a>
+          </li>
+          <li class="nav__link <%= current === 'Press' ? "nav__link--current" : '' %>">
+            <a href="/press">Press</a>
           </li>
         </ul>
 
@@ -62,7 +65,7 @@
     <!-- Footer -->
     <div class="container">
       <footer>
-        <p>© Skandinaviska Enskilda Banken AB (publ)</p>
+        <p>© Skandinaviska Enskilda Banken AB</p>
         <div class="icons">
           <i class="icon fa-brands fa-facebook"></i>
           <i class="icon fa-brands fa-twitter"></i>
