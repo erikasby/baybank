@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= title %></title>
+    <title>SEB Base - <%= title %></title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -53,6 +53,23 @@
         </div> -->
         <!-- /Search -->
       </header>
+      <% if(breadCrumb !== "Home") {%> 
+      <section class="bread-crumb">
+        <ul class='bread-crumb__links'>
+          <li class="bread-crumb__link"><a href="/">Home</a></li>
+          <% const splittedBreadCrumbs = breadCrumb.split('+') %> 
+          <% for (let i=0; i < splittedBreadCrumbs.length; i++) {%>
+            <% if(i === splittedBreadCrumbs.length-1){ %>
+              <p>></p>
+              <li class="bread-crumb__link bread-crumb__link--current"><%= splittedBreadCrumbs[i] %></li>
+            <% } else {%>   
+              <p>></p>
+              <li class="bread-crumb__link"><a href="/news"><%= splittedBreadCrumbs[i] %></a></li>
+            <% } %> 
+          <% } %> 
+        </ul>
+      </section>
+      <% } %> 
     </div>
     <!-- /Header -->
 
