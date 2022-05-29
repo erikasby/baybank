@@ -12,15 +12,21 @@ exports.home = async (req, res, next) => {
       breadCrumb: 'Home',
     });
   } catch (error) {
-    console.log(error);
+    res.render('error', {
+      title: 'Error',
+      path: '/error',
+      current: '',
+      breadCrumb: 'Error',
+    });
   }
 };
 
 // GET
 // News
 exports.news = async (req, res, next) => {
-  const newsArticles = await Article.find({category: 'News'}).sort({_id: -1});
   try {
+    const newsArticles = await Article.find({category: 'News'}).sort({_id: -1});
+
     res.render('news', {
       title: 'News',
       path: '/news',
@@ -29,16 +35,22 @@ exports.news = async (req, res, next) => {
       breadCrumb: 'News',
     });
   } catch (error) {
-    console.log(error);
+    res.render('error', {
+      title: 'Error',
+      path: '/error',
+      current: '',
+      breadCrumb: 'Error',
+    });
   }
 };
 
 // GET
 // News Article
 exports.newsArticle = async (req, res, next) => {
-  let articleId = req.params.id;
-  const article = await Article.find({category: 'News', _id: articleId});
   try {
+    let articleId = req.params.id;
+    const article = await Article.find({category: 'News', _id: articleId});
+
     res.render('article', {
       title: article[0].title,
       path: '/news',
@@ -47,15 +59,23 @@ exports.newsArticle = async (req, res, next) => {
       breadCrumb: 'News+',
     });
   } catch (error) {
-    console.log(error);
+    res.render('error', {
+      title: 'Error',
+      path: '/error',
+      current: '',
+      breadCrumb: 'Error',
+    });
   }
 };
 
 // GET
 // Press
 exports.press = async (req, res, next) => {
-  const pressArticles = await Article.find({category: 'Press'}).sort({_id: -1});
   try {
+    const pressArticles = await Article.find({category: 'Press'}).sort({
+      _id: -1,
+    });
+
     res.render('press', {
       title: 'Press',
       path: '/press',
@@ -64,17 +84,22 @@ exports.press = async (req, res, next) => {
       breadCrumb: 'Press',
     });
   } catch (error) {
-    console.log(error);
+    res.render('error', {
+      title: 'Error',
+      path: '/error',
+      current: '',
+      breadCrumb: 'Error',
+    });
   }
 };
 
 // GET
 // Press Article
 exports.pressArticle = async (req, res, next) => {
-  let articleId = req.params.id;
-  const article = await Article.find({category: 'Press', _id: articleId});
-
   try {
+    let articleId = req.params.id;
+    const article = await Article.find({category: 'Press', _id: articleId});
+
     res.render('article', {
       title: article[0].title,
       path: '/press',
@@ -83,11 +108,15 @@ exports.pressArticle = async (req, res, next) => {
       breadCrumb: 'Press+',
     });
   } catch (error) {
-    console.log(error);
+    res.render('error', {
+      title: 'Error',
+      path: '/error',
+      current: '',
+      breadCrumb: 'Error',
+    });
   }
 };
 
-// title, secondaryTitle, text, date, category, image
 // async function insertDummyArticleData() {
 //   try {
 //     await Article.insertMany([

@@ -12,6 +12,15 @@ app.set('view engine', 'ejs');
 
 app.use('/', require('./server/routes/router'));
 
+app.use((req, res, next) => {
+  res.render('error', {
+    title: 'Error',
+    path: '/error',
+    current: '',
+    breadCrumb: 'Error',
+  });
+});
+
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
