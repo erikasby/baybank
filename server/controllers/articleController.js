@@ -1,4 +1,5 @@
-// Controller - controls the queries and functionality of a page
+require('../models/database');
+const Article = require('../models/Article');
 
 exports.home = async (req, res, next) => {
   try {
