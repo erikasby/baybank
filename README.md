@@ -6,7 +6,7 @@
   </a>
 </p>
 
-> Application of SEB bank for first college end year practical work
+> Application of SEB bank for college end year first practical work
 
 ## Install
 
