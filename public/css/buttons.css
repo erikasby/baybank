@@ -1,0 +1,46 @@
+/* Buttons */
+.btn {
+  display: flex;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.btn__holder {
+  display: flex;
+}
+
+.btn--primary {
+  outline: 2px solid #fff;
+  background-color: var(--brand-secondary);
+  color: #fff;
+}
+
+.btn--primary:focus {
+  outline: 2px solid var(--brand-main);
+}
+
+.btn--secondary {
+  outline: 2px solid var(--brand-secondary);
+  color: var(--brand-secondary);
+  background-color: #fff;
+}
+
+.btn--secondary:hover {
+  opacity: 1;
+  background-color: var(--brand-secondary);
+  color: #fff;
+}
+
+.btn--secondary:focus {
+  outline: 2px solid var(--brand-main);
+}
+/* /Buttons */
