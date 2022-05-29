@@ -1,26 +1,17 @@
+<%- include('includes/header.ejs', {article: article}) %>
 <article class="article">
   <div class="article__text">
-    <p class="article__date"><%= new Date().toISOString().slice(0, 10) %></p>
-    <h1 class="article__text-h">
-      All of your necessities can be met with a loan
-    </h1>
-    <img class="article__img" src="/img/index-4.jpg" alt="Apple pay" />
+    <p class="article__date"><%= article.date %></p>
+    <h1 class="article__text-h"><%= article.title %></h1>
+    <img
+      class="article__img"
+      src="/img/<%= article.image %>"
+      alt="<%= article.title %>"
+    />
     <h3 class="article__text-h article__text-h--medium">
-      We can help you with all of your financial needs, whether you're buying or
-      renovating a home, buying a car, traveling, or making a long-awaited
-      purchase.
+      <%= article.secondaryTitle %>
     </h3>
-    <p class="article__text-p">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique in
-      magni at suscipit. Hic asperiores temporibus blanditiis, dignissimos harum
-      magnam. At eveniet magnam ipsum veritatis nisi esse illum beatae
-      voluptates. <br /><br />
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum asperiores
-      corrupti perferendis a sequi! Similique autem iusto tenetur sunt ratione
-      doloremque ad, ipsam eaque rem animi possimus in cum ullam. <br /><br />
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum asperiores
-      corrupti perferendis a sequi! Similique autem iusto tenetur sunt ratione
-      doloremque ad, ipsam eaque rem animi possimus in cum ullam.
-    </p>
+    <p class="article__text-p"><%= article.text %></p>
   </div>
 </article>
+<%- include('includes/footer.ejs', {article: article}) %>

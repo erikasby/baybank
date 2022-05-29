@@ -1,0 +1,21 @@
+<div class="card card--medium">
+  <section>
+    <img
+      class="card__img card__img--medium"
+      src="/img/<%= article.image %>"
+      alt="Apple pay"
+    />
+  </section>
+  <section class="card__text-separator">
+    <div class="card__text">
+      <p class="card__text-p card__date"><%= article.date %></p>
+      <h3 class="card__text-h card__text-h--medium"><%= article.title %></h3>
+      <p class="card__text-p"><%= article.secondaryTitle %></p>
+    </div>
+    <div class="btn__holder">
+      <a class="btn btn--secondary" href="<%= path %>/<%= article._id %>"
+        >Read</a
+      >
+    </div>
+  </section>
+</div>

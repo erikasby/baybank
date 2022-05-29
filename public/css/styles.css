@@ -164,6 +164,10 @@ main {
   width: 100%;
 }
 
+.card__order--second {
+  order: 2;
+}
+
 .card--medium {
   height: 30rem;
   border-radius: 6px;

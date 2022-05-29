@@ -1,0 +1,22 @@
+<div class="card card--small">
+  <section>
+    <img
+      class="card__img card__img--small"
+      src="/img/<%= article.image %>"
+      alt="Apple pay"
+    />
+  </section>
+  <section class="card__text-separator card__text-separator--small">
+    <div class="card__text card__text--small">
+      <p class="card__text-p card__date card__date--small">
+        <%= article.date %>
+      </p>
+      <a class="card__link" href="<%= path %>/<%= article._id %>">
+        <h3 class="card__text-h card__text-h--small"><%= article.title %> ➞</h3>
+      </a>
+      <p class="card__text-p card__text-p--small">
+        <%= article.secondaryTitle %>
+      </p>
+    </div>
+  </section>
+</div>

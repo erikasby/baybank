@@ -5,11 +5,7 @@ const articleSchema = new mongoose.Schema({
     type: String,
     required: 'This field is required.',
   },
-  h1: {
-    type: String,
-    required: 'This field is required.',
-  },
-  h2: {
+  secondaryTitle: {
     type: String,
     required: 'This field is required.',
   },
@@ -34,4 +30,4 @@ const articleSchema = new mongoose.Schema({
 
 articleSchema.index({title: 'text', text: 'text'});
 
-module.exports = mongoose.model('Recipe', articleSchema);
+module.exports = mongoose.model('Article', articleSchema);
