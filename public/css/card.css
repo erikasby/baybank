@@ -87,7 +87,7 @@
 .card--small {
   grid-template-columns: 1fr 2fr;
   height: 15rem;
-  border-radius: 3px;
+  border-radius: 6px;
   margin: 0;
 }
 
@@ -123,3 +123,47 @@
   height: 15rem;
 }
 /* /Card Small */
+
+@media screen and (max-width: 1150px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    margin: 1.5rem 0;
+  }
+
+  .card__order--second {
+    order: 2;
+  }
+
+  .card__order--first {
+    order: 1;
+  }
+
+  .card__img {
+    height: 20rem;
+  }
+
+  .card__text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card__text-separator {
+    display: block;
+    flex-direction: column;
+    justify-content: none;
+    padding: 2rem;
+    background-color: #fff;
+    height: 100%;
+  }
+
+  .card__text-h {
+    font-size: 1.8rem;
+  }
+
+  .card__text-p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+}

@@ -19,7 +19,7 @@
 }
 
 .btn--primary {
-  outline: 2px solid #fff;
+  outline: 2px solid transparent;
   background-color: var(--brand-secondary);
   color: #fff;
 }
