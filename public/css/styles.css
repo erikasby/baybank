@@ -16,6 +16,8 @@
   --brand-main: #60cd18;
   --brand-secondary: #0092e1;
 
+  --dark: rgb(20, 20, 20);
+
   --gray-900: #111827;
   --gray-800: #1e293b;
   --gray-700: #374151;
@@ -42,11 +44,7 @@ body.dark a {
   display: flex;
   align-items: center;
   justify-content: right;
-  background-color: var(--gray-900);
-}
-
-body.dark .additionals {
-  background-color: #fff;
+  background-color: var(--dark);
 }
 
 .switch {
@@ -72,12 +70,8 @@ body.dark .additionals {
   transform: scale(1);
 }
 
-body.dark .label {
-  background-color: var(--gray-900);
-}
-
 .label .ball {
-  background-color: var(--gray-900);
+  background-color: var(--dark);
   border-radius: 50%;
   position: absolute;
   top: 3px;
@@ -86,10 +80,6 @@ body.dark .label {
   width: 20px;
   transform: translateX(0px);
   transition: transform 0.2s linear;
-}
-
-body.dark .label .ball {
-  background-color: #fff;
 }
 
 .checkbox:checked + .label .ball {
@@ -439,21 +429,13 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 2rem 0;
-  background-color: var(--gray-900);
+  background-color: var(--dark);
   gap: 1rem;
-}
-
-body.dark footer {
-  background-color: #fff;
 }
 
 footer p {
   font-size: 0.8rem;
   color: #fff;
-}
-
-body.dark footer p {
-  color: var(--gray-900);
 }
 
 footer .icons {
@@ -468,16 +450,8 @@ footer .icon {
   transition: color 0.2s;
 }
 
-body.dark footer .icon {
-  color: var(--gray-900);
-}
-
 footer .icon:hover {
   cursor: pointer;
-  color: var(--brand-secondary);
-}
-
-body.dark footer .icon:hover {
   color: var(--brand-secondary);
 }
 /* /Footer */
