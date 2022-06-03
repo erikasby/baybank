@@ -293,6 +293,11 @@ body.dark .card__date {
   flex-direction: column;
   justify-content: space-between;
   padding: 3rem;
+  background-color: #fff;
+}
+
+body.dark .card__text-separator {
+  background-color: var(--gray-900);
 }
 
 .card__img {
@@ -333,6 +338,11 @@ body.dark .card__link:hover {
   height: 15rem;
   border-radius: 6px;
   margin: 0;
+  background-color: #fff;
+}
+
+body.dark .card--small {
+  background-color: var(--gray-900);
 }
 
 .card__text--small {
