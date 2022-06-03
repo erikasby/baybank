@@ -21,8 +21,18 @@
     />
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
-  <body>
+  <body id='body'>
     <!-- Header -->
+    <div class="additionals">
+      <div class="switch">
+          <input type="checkbox" class="checkbox" id="chk" />
+          <label class="label" for="chk">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <div class="ball"></div>
+          </label>
+      </div>
+    </div>
     <div class="container">
       <header class="nav">
         <!-- Logo -->
@@ -45,7 +55,7 @@
       </header>
 
       <!-- Bread crumb -->
-      <% if(breadCrumb !== title) {%> 
+      <!-- <% if(breadCrumb !== title) {%> 
       <% breadCrumb += article.title %> 
       <section class="bread-crumb">
         <ul class='bread-crumb__links'>
@@ -63,7 +73,7 @@
         </ul>
       </section>
       <% } %> 
-    </div>
+    </div> -->
     <!-- /Bread crumb -->
     <!-- /Header -->
     <!-- Main -->
