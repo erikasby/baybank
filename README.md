@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to college-job-practical-work-1 👋</h1>
+<h1 align="center">Welcome to first-bank-project 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="#" target="_blank">
@@ -6,7 +6,7 @@
   </a>
 </p>
 
-> Application of SEB bank for college end year first practical work
+> Application of a Bank for a first practical work in a job as a college student
 
 ## Install
 
@@ -17,9 +17,5 @@ npm install
 ## Usage
 
 ```sh
-npm run start
+npm start
 ```
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
