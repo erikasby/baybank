@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to first-bank-project 👋</h1>
+<h1 align="center">Welcome to bank-project 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="#" target="_blank">
@@ -6,7 +6,7 @@
   </a>
 </p>
 
-> Application of a Bank for a first practical work in a job as a college student
+> Application of a Bank
 
 ## Install
 
