@@ -6,7 +6,7 @@
   </a>
 </p>
 
-> This project is the implementation of the tasks given by the work. Additionally, this was the project for my bachelor's.
+> Bank - This project is the implementation of the tasks given by the work which were required by the college. Additionally, this was the project for my bachelor's.
 
 ## Install
 
