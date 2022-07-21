@@ -7,6 +7,11 @@
     font-family: 'Lato', sans-serif;
 }
 
+*:focus {
+    outline: 2px dashed;
+    outline-color: inherit;
+}
+
 html,
 body {
     height: 100%;
@@ -20,10 +25,11 @@ a:visited,
 a:hover,
 a:active {
     text-decoration: none;
+    color: #000;
 }
 
 .separator {
     margin: 0 auto;
-    max-width: 120rem;
+    max-width: 80rem;
     width: 90%;
 }
