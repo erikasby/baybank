@@ -1,12 +1,16 @@
-<%- include('includes/header.ejs', {}) %>
-<!-- prettier-ignore -->
-<% for (let i=0; i < article.length; i++) {%> 
-  <% if (i === 0) {%> 
-<%- include('includes/cardMedium.ejs', { article: article[i] }) %>
-<div class="card-set">
-  <!-- prettier-ignore -->
-  <% } else { %>
-  <%- include('includes/cardSmall.ejs', { article: article[i] }) %>
-<% } %> <% } %>
-</div>
-<%- include('includes/footer.ejs', {}) %>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('includes/head.ejs') %>
+        <title><%= title %></title>
+    </head>
+    <body>
+        <div class="separator">
+            <%- include('includes/header.ejs') %>
+            <main class="main-content">
+                <h1><%= title %></h1>
+            </main>
+        </div>
+        <%- include('includes/footer.ejs') %>
+    </body>
+</html>

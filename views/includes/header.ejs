@@ -1,81 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SEB Base - <%= title %></title>
-    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="/css/styles.css" />
-  </head>
-  <body id='body'>
-    <!-- Header -->
-    <div class="additionals">
-      <div class="switch">
-          <input type="checkbox" class="checkbox" id="chk" />
-          <label class="label" for="chk">
-            <i class="fas fa-moon"></i>
-            <i class="fas fa-sun"></i>
-            <div class="ball"></div>
-          </label>
-      </div>
-    </div>
-    <div class="container">
-      <header class="nav">
-        <!-- Logo -->
-        <a href="/" class="nav__brand"
-          ><img src="/img/logo.svg" alt="SEB logo"
-        /></a>
-        <!-- /Logo -->
-
-        <!-- Nav links -->
+<header class="header">
+    <a class="logo" href="/">
+        <span class="logo__bay">Bay</span>
+        <span class="logo__bank">Bank</span>
+    </a>
+    <nav class="nav">
         <ul class="nav__links">
-          <li class="nav__link <%= current === 'Home' ? "nav__link--current" : '' %>"><a href="/">Home</a></li>
-          <li class="nav__link <%= current === 'News' ? "nav__link--current" : '' %>">
-            <a href="/news">News</a>
-          </li>
-          <li class="nav__link <%= current === 'Press' ? "nav__link--current" : '' %>">
-            <a href="/press">Press</a>
-          </li>
+            <li class="nav__link"><a href="/">Home</a></li>
+            <li class="nav__link"><a href="/news">News</a></li>
+            <li class="nav__link"><a href="/press">Press</a></li>
+            <li class="nav__link"><a href="/404">404</a></li>
         </ul>
-        <!-- /Nav links -->
-      </header>
-
-      <!-- Bread crumb -->
-      <!-- <% if(breadCrumb !== title) {%> 
-      <% breadCrumb += article.title %> 
-      <section class="bread-crumb">
-        <ul class='bread-crumb__links'>
-          <li class="bread-crumb__link"><a href="/">Home</a></li>
-          <% const splittedBreadCrumbs = breadCrumb.split('+') %> 
-          <% for (let i=0; i < splittedBreadCrumbs.length; i++) {%>
-            <% if(i === splittedBreadCrumbs.length-1){ %>
-              <p>></p>
-              <li class="bread-crumb__link bread-crumb__link--current"><%= splittedBreadCrumbs[i] %></li>
-            <% } else {%>   
-              <p>></p>
-              <li class="bread-crumb__link"><a href="/news"><%= splittedBreadCrumbs[i] %></a></li>
-            <% } %> 
-          <% } %> 
-        </ul>
-      </section>
-      <% } %> 
-    </div> -->
-    <!-- /Bread crumb -->
-    <!-- /Header -->
-    <!-- Main -->
-<div class="container--main">
-  <main>
+    </nav>
+</header>

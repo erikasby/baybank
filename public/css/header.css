@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,700;1,800&display=swap');
+
+:root {
+    /* Blue */
+    --main-logo: #0ea5e9;
+
+    /* Sky */
+    --secondary-logo: #0c4a6e;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.logo__bay {
+    font-family: inherit;
+    color: var(--secondary-logo);
+}
+
+.logo__bank {
+    font-family: inherit;
+    color: var(--main-logo);
+}
+
+.nav {
+    display: flex;
+    margin: 1rem 0;
+}
+
+.nav__links {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}

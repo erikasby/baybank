@@ -1,7 +1,16 @@
-<%- include('includes/header.ejs', {}) %>
-<!-- prettier-ignore -->
-<%- include('includes/card.ejs', {title: title, cardOrder: "card__order--second", img: '/img/index-1.jpg', alt: 'Become our customer', h3: 'Join our list of satisfied clients', p: 'Become a SEB customer in the way that suits you best and obtain a trustworthy financial partner.'}) %>
-<%- include('includes/card.ejs', {title: title, cardOrder: "card__order--first", img: '/img/index-2.jpg', alt: 'Robo-advisor', h3: 'Robo-advisors are a new method to invest', p: "Personalized investment advice is available 24 hours a day, 7 days a week on the mobile app. It only takes 15 minutes, you can start with as little as 1 euro, and you don't need any prior financial experience."}) %>
-<%- include('includes/card.ejs', {title: title, cardOrder: "card__order--second", img: '/img/index-3.jpg', alt: 'Apple pay', h3: 'Apple Pay is a convenient, safe, and private method to pay', p: 'Use your Apple devices to make secure and quick payments in stores, apps, and online by adding your SEB card to Apple Pay using the SEB mobile app or Apple Wallet.'}) %>
-<%- include('includes/card.ejs', {title: title, cardOrder: "card__order--first", img: '/img/index-4.jpg', alt: 'About loans', h3: 'All of your necessities can be met with a loan', p: "We can help you with all of your financial needs, whether you're buying or renovating a home, buying a car, traveling, or making a long-awaited purchase."}) %>
-<%- include('includes/footer.ejs', {}) %>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('includes/head.ejs') %>
+        <title><%= title %></title>
+    </head>
+    <body>
+        <div class="separator">
+            <%- include('includes/header.ejs') %>
+            <main class="main-content">
+                <h1><%= title %></h1>
+            </main>
+        </div>
+        <%- include('includes/footer.ejs') %>
+    </body>
+</html>
