@@ -1,0 +1,26 @@
+.hero {
+    background-color: var(--main-color);
+}
+
+.hero__container {
+    margin: 0 auto;
+    max-width: 70rem;
+    width: 90%;
+    padding: 4rem 0;
+}
+
+.hero__secondary-heading {
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+.hero__main-heading {
+    margin-bottom: 1rem;
+    font-size: 4rem;
+    color: var(--light-text);
+}
+
+.hero__paragraph {
+    font-size: 1.2rem;
+    color: var(--light-text);
+}

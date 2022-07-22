@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+:root {
+    --letter-color: #f4f4f5;
+}
+
+.bank-card {
+    margin: 0 auto;
+    max-width: 70rem;
+    width: 90%;
+    padding: 4rem 0;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.bank-card__body {
+    border-radius: 1rem;
+    height: 15rem;
+    width: 25rem;
+    background-color: var(--main-color);
+    position: relative;
+    font-family: inherit;
+}
+
+.bank-card__logo {
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    position: absolute;
+    left: 1.5rem;
+    top: 1rem;
+}
+
+.bank-card__logo__bay {
+    font-family: inherit;
+    color: #1e3a8a;
+}
+
+.bank-card__logo__bank {
+    font-family: inherit;
+    color: #fff;
+}
+
+.bank-card__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 2rem;
+    width: 21rem;
+    color: var(--letter-color);
+    position: absolute;
+    font-family: inherit;
+}
+
+.bank-card__date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    top: 70%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    height: 2rem;
+    width: 6rem;
+    color: var(--letter-color);
+    position: absolute;
+    font-family: inherit;
+}
+
+.bank-card__name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    top: 85%;
+    right: 77%;
+    transform: translate(50%, -50%);
+    height: 2rem;
+    width: 12rem;
+    color: var(--letter-color);
+    position: absolute;
+    font-family: inherit;
+}
+
+.mastercard-logo {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 80%;
+    left: 82%;
+    transform: translate(-50%, -50%);
+}
+
+.mastercard-logo__left {
+    transform: translateX(50%);
+    height: 3rem;
+    width: 3rem;
+    border-radius: 99rem;
+    background-color: #eb001b;
+}
+
+.mastercard-logo__right {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 99rem;
+    mix-blend-mode: hard-light;
+    background-color: #f79e1b;
+}
