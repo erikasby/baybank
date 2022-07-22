@@ -1,7 +1,41 @@
 .footer {
+    background-color: var(--secondary-color);
+}
+
+.footer__container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    background-color: #999;
+    gap: 1rem;
+    padding: 2rem 0;
+    margin: 0 auto;
+    max-width: 70rem;
+    width: 90%;
+}
+
+.footer__links {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.footer__link {
+    padding: 0.5rem;
+    transition: color 0.2s;
+}
+
+.footer__link:hover > .footer__icon {
+    color: var(--main-color);
+}
+
+.footer__icon {
+    font-size: 1.5rem;
+    color: var(--light-text);
+    transition: color 0.2s;
+}
+
+.footer__copyright {
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: var(--light-text);
 }

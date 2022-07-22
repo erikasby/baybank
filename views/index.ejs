@@ -2,13 +2,47 @@
 <html lang="en">
     <head>
         <%- include('includes/head.ejs') %>
+        <link rel="stylesheet" href="/css/index.css" />
         <title><%= title %></title>
     </head>
     <body>
         <div class="separator">
             <%- include('includes/header.ejs') %>
             <main class="main-content">
-                <h1><%= title %></h1>
+                <section class="hero">
+                    <div class="hero__container">
+                        <h2 class="hero__secondary-heading">Our mission</h2>
+                        <h1 class="hero__main-heading">Bring your ideas to us</h1>
+                        <p class="hero__paragraph">
+                            Our goal is to provide you control, security, and flexibility over our services as well as
+                            your money
+                        </p>
+                    </div>
+                </section>
+
+                <section class="bank-card">
+                    <!-- <div class="bank-card__text">
+                        <h2 class="bank-card__heading"></h2>
+                        <p class="bank-card__paragraph"></p>
+                    </div> -->
+                    <div class="bank-card__body">
+                        <a class="bank-card__logo" href="/">
+                            <span class="bank-card__logo__bay">Bay</span>
+                            <span class="bank-card__logo__bank">Bank</span>
+                        </a>
+                        <div class="bank-card__number">1234 1234 1234 1234</div>
+                        <div class="bank-card__date"></div>
+                        <div class="bank-card__name"></div>
+                        <div class="mastercard-logo">
+                            <div class="mastercard-logo__left"></div>
+                            <div class="mastercard-logo__right"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="loan-calculator"></section>
+
+                <section class="stocks-list"></section>
             </main>
         </div>
         <%- include('includes/footer.ejs') %>

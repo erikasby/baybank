@@ -1,15 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,700;1,800&display=swap');
 
-/* All colors are taken from Tailwind Colors docs */
-:root {
-    /* Sky */
-    --main-logo: #0ea5e9;
-
-    /* Blue */
-    --secondary-logo: #1e3a8a;
-}
-
-.header {
+.header__container {
+    margin: 0 auto;
+    max-width: 70rem;
+    width: 90%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -25,21 +19,57 @@
 
 .logo__bay {
     font-family: inherit;
-    color: var(--secondary-logo);
+    color: var(--secondary-color);
 }
 
 .logo__bank {
     font-family: inherit;
-    color: var(--main-logo);
+    color: var(--main-color);
 }
 
 .nav {
     display: flex;
-    margin: 1rem 0;
+    margin: 2rem 0;
 }
 
 .nav__links {
     list-style-type: none;
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
+}
+
+.nav__link {
+    color: var(--dark-text);
+    font-weight: 500;
+    transition: color 0.2s;
+    padding: 0.5rem 1rem;
+}
+
+.nav__link:hover {
+    color: var(--main-color);
+}
+
+.sign-in {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    color: var(--light-text);
+    background-color: var(--main-color);
+    padding: 0.5rem 1rem;
+    transition: opacity 0.2s;
+}
+
+.sign-in:hover {
+    opacity: 0.7;
+}
+
+.sign-in__icon {
+    font-size: 1rem;
+    transition: transform 0.2s;
+    color: var(--light-text);
+}
+
+.sign-in:hover > .sign-in__icon {
+    transform: translateX(4px);
 }

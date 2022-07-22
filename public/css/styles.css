@@ -1,15 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* All colors are taken from Tailwind Colors docs */
+:root {
+    /* Sky */
+    --main-color: #0ea5e9;
+
+    /* Blue */
+    --secondary-color: #1e3a8a;
+
+    /* Neutral */
+    --dark-text: #000;
+    --light-text: #fff;
+    --light-gray-text: #f5f5f5;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 *:focus {
     outline: 2px dashed;
-    outline-color: inherit;
+    outline-color: var(--dark-text);
 }
 
 html,
@@ -25,11 +39,10 @@ a:visited,
 a:hover,
 a:active {
     text-decoration: none;
-    color: #000;
 }
 
-.separator {
-    margin: 0 auto;
-    max-width: 80rem;
-    width: 90%;
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
