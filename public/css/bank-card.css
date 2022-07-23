@@ -1,24 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 :root {
-    --letter-color: #f4f4f5;
+    --card-black: #000;
 }
 
 .bank-card {
+    background-color: var(--light-gray-text);
+}
+
+.bank-card__container {
     margin: 0 auto;
     max-width: 70rem;
     width: 90%;
-    padding: 4rem 0;
+    padding: 4rem 0 6.5rem 0;
     font-family: 'Share Tech Mono', monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 8rem;
+}
+
+.bank-card__text {
+    width: 50%;
+}
+
+.bank-card__heading {
+    font-size: 3rem;
+    color: var(--dark-light-text);
+    margin-bottom: 1rem;
+}
+
+.bank-card__paragraph {
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 500;
+    margin-bottom: 1.3rem;
+}
+
+.bank-card__read-more {
+    font-size: 1rem;
+    color: var(--main-color);
+    font-weight: 500;
+    flex-grow: 0;
+    transition: color 0.2s;
+}
+
+.bank-card__read-more:hover,
+.bank-card__read-more:active {
+    color: var(--secondary-color);
 }
 
 .bank-card__body {
     border-radius: 1rem;
     height: 15rem;
     width: 25rem;
-    background-color: var(--main-color);
+    background-color: var(--secondary-color);
     position: relative;
     font-family: inherit;
+    transition: background-color 0.2s;
 }
 
 .bank-card__logo {
@@ -33,7 +73,7 @@
 
 .bank-card__logo__bay {
     font-family: inherit;
-    color: #1e3a8a;
+    color: #fff;
 }
 
 .bank-card__logo__bank {
@@ -51,7 +91,7 @@
     transform: translate(-50%, -50%);
     height: 2rem;
     width: 21rem;
-    color: var(--letter-color);
+    color: var(--light-gray-text);
     position: absolute;
     font-family: inherit;
 }
@@ -66,7 +106,7 @@
     transform: translate(-50%, -50%);
     height: 2rem;
     width: 6rem;
-    color: var(--letter-color);
+    color: var(--light-gray-text);
     position: absolute;
     font-family: inherit;
 }
@@ -81,7 +121,7 @@
     transform: translate(50%, -50%);
     height: 2rem;
     width: 12rem;
-    color: var(--letter-color);
+    color: var(--light-gray-text);
     position: absolute;
     font-family: inherit;
 }
@@ -109,4 +149,57 @@
     border-radius: 99rem;
     mix-blend-mode: hard-light;
     background-color: #f79e1b;
+}
+
+.bank-card__colors {
+    height: 3rem;
+    width: 20rem;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 125%);
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.bank-card__color--light-blue {
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 0.3rem;
+    background-color: var(--main-color);
+    cursor: pointer;
+    transition: opacity 0.2s;
+    border-radius: 99rem;
+}
+
+.bank-card__color--blue {
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: var(--secondary-color);
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    border-radius: 99rem;
+}
+
+.bank-card__color--black {
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: var(--card-black);
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    border-radius: 99rem;
+}
+
+.bank-card__color--light-blue:hover,
+.bank-card__color--blue:hover,
+.bank-card__color--black:hover,
+.bank-card__color--light-blue:active,
+.bank-card__color--blue:active,
+.bank-card__color--black:active {
+    opacity: 0.7;
 }
