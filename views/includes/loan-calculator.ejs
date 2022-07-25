@@ -7,5 +7,35 @@
             </p>
             <a href="#" class="loan-calculator__read-more">Read more about loans</a>
         </div>
+        <div class="loan-calculator__body">
+            <div class="loan-calculator__left">
+                <div class="loan-amount">
+                    <div class="loan-amount__label">Loan amount</div>
+                    <div class="loan-amount__input">
+                        <input class="loan-amount__number" type="number" value="5000" min="50" max="50000001" />
+                        <div class="loan-amount__icon">$</div>
+                    </div>
+                </div>
+                <div class="loan-term">
+                    <div class="loan-term__label">Loan term in years</div>
+                    <input class="loan-term__number" type="number" value="5" min="1" max="50" />
+                </div>
+                <div class="loan-calculate">
+                    <div class="loan-rate">
+                        <div class="loan-rate__label">Interest rate p/y</div>
+                        <div class="loan-rate__input">
+                            <input class="loan-rate__number" type="number" step="0.1" value="4.5" min="0.1" max="50" />
+                            <div class="loan-rate__icon">%</div>
+                        </div>
+                    </div>
+                    <button class="loan-calculate__button" type="button">Calculate</button>
+                </div>
+            </div>
+            <div class="loan-calclator__right">
+                <p class="loan-calculator__monthly-payment">$525</p>
+                <p class="loan-calclator__payment-amount">$5500</p>
+                <p class="loan-calculaotr__paid-interest">5%</p>
+            </div>
+        </div>
     </div>
 </section>

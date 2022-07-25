@@ -1,0 +1,210 @@
+.loan-calculator {
+    background-color: #fff;
+    border-bottom: 1px solid var(--neutral);
+}
+
+.loan-calculator__container {
+    margin: 0 auto;
+    max-width: 70rem;
+    width: 90%;
+    padding: 4rem 0;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.loan-calculator__text {
+    width: 50%;
+}
+
+.loan-calculator__heading {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.loan-calculator__paragraph {
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 500;
+    margin-bottom: 1.3rem;
+}
+
+.loan-calculator__read-more {
+    font-size: 1rem;
+    color: var(--main-color);
+    font-weight: 500;
+    flex-grow: 0;
+    transition: color 0.2s;
+}
+
+.loan-calculator__read-more:hover,
+.loan-calculator__read-more:active {
+    color: var(--secondary-color);
+}
+
+.loan-calculator__body {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.loan-calculator__left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.loan-amount {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.loan-amount__label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.loan-amount__input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.loan-amount__number {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--white);
+    outline: 2px solid var(--secondary-color);
+    font-weight: 500;
+    border-radius: 0.3rem;
+    border: none;
+    transition: border 0.2s, background-color 0.2s;
+}
+
+.loan-amount__icon {
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 500;
+    left: 5%;
+}
+
+.loan-term {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.loan-term__label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.loan-term__number {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--white);
+    outline: 2px solid var(--secondary-color);
+    font-weight: 500;
+    border-radius: 0.3rem;
+    border: none;
+    transition: border 0.2s, background-color 0.2s;
+}
+
+.loan-calculate {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.loan-rate {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+
+.loan-rate__label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+.loan-rate__input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.loan-rate__number {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--white);
+    outline: 2px solid var(--secondary-color);
+    font-weight: 500;
+    border-radius: 0.3rem;
+    border: none;
+    width: 100%;
+    transition: border 0.2s, background-color 0.2s;
+}
+
+.loan-rate__icon {
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 500;
+    right: 8%;
+}
+
+.loan-calculate__button {
+    height: 2.688rem;
+    width: 50%;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--white);
+    outline: 2px solid var(--main-color);
+    font-weight: 500;
+    border-radius: 0.3rem;
+    align-self: flex-end;
+    color: var(--main-color);
+    cursor: pointer;
+    border: none;
+    transition: outline 0.2s, color 0.2s;
+}
+
+.loan-calculate__button:active,
+.loan-calculate__button:hover,
+.loan-calculate__button:focus {
+    outline: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.loan-amount__number:active,
+.loan-amount__number:focus,
+.loan-term__number:active,
+.loan-term__number:focus,
+.loan-rate__number:active,
+.loan-rate__number:focus {
+    outline: 2px solid var(--secondary-color);
+    background-color: var(--secondary-color-transparent);
+    border: none;
+}
+
+.loan-calculator__right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

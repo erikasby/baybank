@@ -1,9 +1,14 @@
 // Change bank card color on click
-const bankCardColors = document.querySelector('.bank-card__colors');
+const bankCard = document.querySelector('.bank-card__body');
 
-bankCardColors.addEventListener('click', (event) => {
-    const clickedColor = event.target;
-    const clickedColorBackgroundColor = getComputedStyle(clickedColor).backgroundColor;
-    const bankCard = clickedColor.parentNode.parentNode;
-    bankCard.style.backgroundColor = clickedColorBackgroundColor;
-});
+const generateHslColor = () => {
+    return `hsl(${Math.floor(Math.random() * 360) + 1}, ${50 - (Math.floor(Math.random() * 50) + 1)}%, ${
+        50 - (Math.floor(Math.random() * 50) + 1)
+    }%)`;
+};
+
+const changeBankCardBackgroundColor = () => {
+    bankCard.style.backgroundColor = generateHslColor();
+};
+
+setInterval(changeBankCardBackgroundColor, 1000);

@@ -30,12 +30,12 @@
 
 .footer__icon {
     font-size: 1.5rem;
-    color: var(--light-text);
+    color: var(--white);
     transition: color 0.2s;
 }
 
 .footer__copyright {
     font-size: 0.7rem;
     font-weight: 400;
-    color: var(--light-text);
+    color: var(--white);
 }
