@@ -2,9 +2,11 @@
 const bankCard = document.querySelector('.bank-card__body');
 
 const generateHslColor = () => {
-    return `hsl(${Math.floor(Math.random() * 360) + 1}, ${50 - (Math.floor(Math.random() * 50) + 1)}%, ${
-        50 - (Math.floor(Math.random() * 50) + 1)
-    }%)`;
+    let hue = Math.floor(Math.random() * 360) + 1; // 0-360 - All available values
+    let saturation = 100 - (Math.floor(Math.random() * 30) + 1); // 70%-100%
+    let lightness = 40 - (Math.floor(Math.random() * 20) + 1); // 20%-40%
+
+    return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
 };
 
 const changeBankCardBackgroundColor = () => {
