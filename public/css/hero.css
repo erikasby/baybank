@@ -39,6 +39,7 @@
     color: var(--neutral-50);
     padding: 1rem 3rem;
     background-color: #ef4444;
+    outline: 2px solid #ef4444;
 }
 
 .hero__link:hover,
