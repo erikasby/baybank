@@ -1,29 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 /* All colors are taken from Tailwind Colors docs */
 :root {
-    /* Sky */
-    --main-color: #0ea5e9;
-    --main-color-transparent: rgba(14, 165, 233, 0.1);
-
     /* Blue */
-    --secondary-color: #1e3a8a;
-    --secondary-color-transparent: rgba(30, 58, 138, 0.1);
+    --blue-50: #eff6ff;
+    --blue-100: #dbeafe;
+    --blue-200: #bfdbfe;
+    --blue-300: #93c5fd;
+    --blue-400: #60a5fa;
+    --blue-500: #3b82f6;
+    --blue-600: #2563eb;
+    --blue-700: #1d4ed8;
+    --blue-800: #1e40af;
+    --blue-900: #1e3a8a;
+    --blue-900-transparent: rgba(30, 58, 138, 0.1);
+
+    /* Pink */
+    --pink-: #fdf2f8;
+    --pink-: #fce7f3;
+    --pink-: #fbcfe8;
+    --pink-: #f9a8d4;
+    --pink-: #f472b6;
+    --pink-: #ec4899;
+    --pink-: #db2777;
+    --pink-: #be185d;
+    --pink-: #9d174d;
+    --pink-: #831843;
 
     /* Neutral */
-    --black: #000;
-    --dark: #171717;
-    --dark-light: #404040;
-    --white: #fff;
-    --light-gray: #f5f5f5;
-    --neutral: #d4d4d4;
+    --neutral-50: #fafafa;
+    --neutral-100: #f5f5f5;
+    --neutral-200: #e5e5e5;
+    --neutral-300: #d4d4d4;
+    --neutral-400: #a3a3a3;
+    --neutral-500: #737373;
+    --neutral-600: #525252;
+    --neutral-700: #404040;
+    --neutral-800: #262626;
+    --neutral-900: #171717;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 *:focus {
@@ -37,6 +58,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+body {
+    background-color: var(--neutral-50);
 }
 
 input[type='number']::-webkit-inner-spin-button,

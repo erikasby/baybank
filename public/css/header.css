@@ -2,7 +2,7 @@
 
 .header__container {
     margin: 0 auto;
-    max-width: 70rem;
+    max-width: 100rem;
     width: 90%;
     display: flex;
     flex-direction: row;
@@ -12,20 +12,19 @@
 
 .logo {
     display: flex;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 2rem;
-    font-weight: 700;
-    font-style: italic;
+    font-weight: 800;
 }
 
 .logo__bay {
     font-family: inherit;
-    color: var(--secondary-color);
+    color: var(--blue-700);
 }
 
 .logo__bank {
     font-family: inherit;
-    color: var(--main-color);
+    color: var(--blue-700);
 }
 
 .nav {
@@ -40,7 +39,7 @@
 }
 
 .nav__link {
-    color: var(--dark);
+    color: var(--neutral-900);
     font-weight: 400;
     transition: color 0.2s;
     padding: 0.5rem 1rem;
@@ -49,35 +48,30 @@
 
 .nav__link:hover,
 .nav__link:active {
-    color: var(--main-color);
+    text-decoration: underline;
 }
 
-.sign-in {
+.user {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 500;
-    color: var(--secondary-color);
-    padding: 0.5rem 1rem;
-    transition: color 0.2s, outline 0.2s;
-    border-radius: 0.3rem;
-    outline: 2px solid var(--secondary-color);
+    flex-direction: row;
 }
 
-.sign-in:hover,
-.sign-in:active {
-    color: var(--main-color);
-    outline: 2px solid var(--main-color);
+.user__login {
+    border-right: 1px solid var(--neutral-400);
 }
 
-.sign-in__icon {
+.user__login,
+.user__register {
+    color: var(--neutral-900);
+    font-weight: 400;
+    transition: color 0.2s;
+    padding: 0 1rem;
     font-size: 1rem;
-    transition: transform 0.2s, color 0.2s;
-    color: var(--secondary-color);
 }
 
-.sign-in:hover > .sign-in__icon,
-.sign-in:active > .sign-in__icon {
-    transform: translateX(4px);
-    color: var(--main-color);
+.user__login:hover,
+.user__login:active,
+.user__register:hover,
+.user__register:active {
+    text-decoration: underline;
 }
