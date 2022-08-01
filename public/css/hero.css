@@ -2,6 +2,7 @@
     display: flex;
     position: relative;
     background-color: var(--blue-700);
+    margin-bottom: 8rem;
 }
 
 .hero__container {
@@ -23,28 +24,14 @@
     font-size: 8rem;
     color: var(--neutral-50);
     line-height: 1.1;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 .hero__paragraph {
     width: 50%;
     color: var(--neutral-50);
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     font-weight: 400;
-}
-
-.hero__link {
-    font-weight: 500;
-    font-size: 0.8rem;
-    color: var(--neutral-50);
-    padding: 1rem 3rem;
-    background-color: #ef4444;
-    outline: 2px solid #ef4444;
-}
-
-.hero__link:hover,
-.hero__link:active {
-    background-color: var(--blue-700);
 }
 
 .hero__img {

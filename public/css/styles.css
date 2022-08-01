@@ -15,17 +15,17 @@
     --blue-900: #1e3a8a;
     --blue-900-transparent: rgba(30, 58, 138, 0.1);
 
-    /* Pink */
-    --pink-: #fdf2f8;
-    --pink-: #fce7f3;
-    --pink-: #fbcfe8;
-    --pink-: #f9a8d4;
-    --pink-: #f472b6;
-    --pink-: #ec4899;
-    --pink-: #db2777;
-    --pink-: #be185d;
-    --pink-: #9d174d;
-    --pink-: #831843;
+    /* Red */
+    --red-50: #fef2f2;
+    --red-100: #fee2e2;
+    --red-200: #fecaca;
+    --red-300: #fca5a5;
+    --red-400: #f87171;
+    --red-500: #ef4444;
+    --red-600: #dc2626;
+    --red-700: #b91c1c;
+    --red-800: #991b1b;
+    --red-900: #7f1d1d;
 
     /* Neutral */
     --neutral-50: #fafafa;

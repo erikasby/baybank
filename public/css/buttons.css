@@ -1,0 +1,14 @@
+.button {
+    display: inline-flex;
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: var(--neutral-50);
+    padding: 1rem 3rem;
+    background-color: var(--red-500);
+    border: 2px solid var(--red-500);
+}
+
+.button:hover,
+.button:active {
+    background-color: transparent;
+}
