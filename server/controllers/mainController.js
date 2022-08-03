@@ -25,12 +25,46 @@ exports.home = async (req, res, next) => {
         res.render('index', {
             title: 'Home',
             path: '/',
+            active: 'Home',
             cards: cards,
         });
     } catch (error) {
         res.render('404', {
             title: '404',
             path: '/404',
+            active: '',
+        });
+    }
+};
+
+exports.login = async (req, res, next) => {
+    try {
+        res.render('login', {
+            title: 'Login',
+            path: '/login',
+            active: 'Login',
+        });
+    } catch (error) {
+        res.render('404', {
+            title: '404',
+            path: '/404',
+            active: '',
+        });
+    }
+};
+
+exports.register = async (req, res, next) => {
+    try {
+        res.render('register', {
+            title: 'Register',
+            path: '/register',
+            active: 'Register',
+        });
+    } catch (error) {
+        res.render('404', {
+            title: '404',
+            path: '/404',
+            active: '',
         });
     }
 };

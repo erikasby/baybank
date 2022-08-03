@@ -1,16 +1,19 @@
 const express = require('express');
 
 const mainController = require('../controllers/mainController');
-const newsController = require('../controllers/newsController');
-const pressController = require('../controllers/pressController');
+const articleController = require('../controllers/articleController');
 
 const router = express.Router();
 
-// Routes
+// Main routes
 router.get('/', mainController.home);
-router.get('/news', newsController.news);
-router.get('/news/:id', newsController.newsArticle);
-router.get('/press', pressController.press);
-router.get('/press/:id', pressController.pressArticle);
+router.get('/login', mainController.login);
+router.get('/register', mainController.register);
+
+// Article routes
+router.get('/news', articleController.news);
+router.get('/news/:id', articleController.newsArticle);
+router.get('/press', articleController.press);
+router.get('/press/:id', articleController.pressArticle);
 
 module.exports = router;

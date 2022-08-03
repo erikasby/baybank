@@ -16,7 +16,7 @@
 .footer__links {
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .footer__link {

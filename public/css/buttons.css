@@ -1,5 +1,5 @@
 .button {
-    display: inline-flex;
+    /* display: inline-flex; */
     font-weight: 500;
     font-size: 0.8rem;
     color: var(--neutral-50);
@@ -11,4 +11,9 @@
 .button:hover,
 .button:active {
     background-color: transparent;
+    cursor: pointer;
+}
+
+.button:focus {
+    outline-color: var(--neutral-900);
 }

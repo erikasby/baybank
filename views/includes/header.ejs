@@ -6,16 +6,14 @@
         </a>
         <nav class="nav">
             <ul class="nav__links">
-                <li><a class="nav__link" href="/">Home</a></li>
-                <li><a class="nav__link" href="/news">News</a></li>
-                <li><a class="nav__link" href="/press">Press</a></li>
-                <li><a class="nav__link" href="/404">404</a></li>
-                <li><a class="nav__link" href="/jsfgsapdfkms">jsfgsapdfkms</a></li>
+                <li><a class="nav__link <%= active == "Home" ? "active" : "" %>" href="/">Home</a></li>
+                <li><a class="nav__link <%= active === "News" ? "active" : "" %>" href="/news">News</a></li>
+                <li><a class="nav__link <%= active === "Press" ? "active" : "" %>" href="/press">Press</a></li>
             </ul>
         </nav>
         <div class="user">
-            <a href="/login" class="user__login">Login</a>
-            <a href="/register" class="user__register">Register</a>
+            <a href="/login" class="user__login <%= active === "Login" ? "active" : "" %>">Login</a>
+            <a href="/register" class="user__register <%= active === "Register" ? "active" : "" %>">Register</a>
         </div>
     </div>
 </header>
