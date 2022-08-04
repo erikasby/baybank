@@ -16,6 +16,7 @@ app.use((req, res, next) => {
     res.render('404', {
         title: '404',
         path: '/404',
+        active: '',
     });
 });
 

@@ -2,12 +2,40 @@
 <html lang="en">
     <head>
         <%- include('includes/head.ejs') %>
+        <link rel="stylesheet" href="/css/register.css" />
         <title><%= title %></title>
     </head>
     <body>
         <%- include('includes/header.ejs', {active: active}) %>
         <main class="main-content">
-            <h1><%= title %></h1>
+            <section class="register">
+                <form class="register__form" action="/register" method="POST">
+                    <label for="email">Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="johndoe@example.com"
+                        maxlength="40"
+                        required
+                    />
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Johndoe12" maxlength="20" required />
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="••••••" maxlength="30" required />
+                    <label for="repeat-password">Repeat password</label>
+                    <input
+                        type="password"
+                        id="repeat-password"
+                        name="repeat-password"
+                        placeholder="••••••"
+                        maxlength="30"
+                        required
+                    />
+                    <button type="submit" class="button register-form__button">Register</button>
+                </form>
+                <a href="/login" class="register__login-link">Don't have an account yet?</a>
+            </section>
         </main>
         <%- include('includes/footer.ejs') %>
     </body>
