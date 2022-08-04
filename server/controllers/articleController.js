@@ -3,7 +3,7 @@ const Article = require('../models/Article');
 
 // GET
 // News
-exports.news = async (req, res, next) => {
+exports.getNews = async (req, res, next) => {
     try {
         const newsArticles = await Article.find({category: 'News'}).sort({_id: -1});
 
@@ -24,7 +24,7 @@ exports.news = async (req, res, next) => {
 
 // GET
 // News Article
-exports.newsArticle = async (req, res, next) => {
+exports.getNewsArticle = async (req, res, next) => {
     try {
         let articleId = req.params.id;
         const article = await Article.find({category: 'News', _id: articleId})[0];
@@ -46,7 +46,7 @@ exports.newsArticle = async (req, res, next) => {
 
 // GET
 // Press
-exports.press = async (req, res, next) => {
+exports.getPress = async (req, res, next) => {
     try {
         const pressArticles = await Article.find({category: 'Press'}).sort({
             _id: -1,
@@ -69,7 +69,7 @@ exports.press = async (req, res, next) => {
 
 // GET
 // Press Article
-exports.pressArticle = async (req, res, next) => {
+exports.getPressArticle = async (req, res, next) => {
     try {
         let articleId = req.params.id;
         const article = await Article.find({category: 'Press', _id: articleId})[0];

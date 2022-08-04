@@ -16,20 +16,43 @@
                         id="email"
                         name="email"
                         placeholder="johndoe@example.com"
+                        minlength="6"
                         maxlength="40"
+                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
                         required
                     />
                     <label for="username">Username</label>
-                    <input type="text" id="username" name="username" placeholder="Johndoe12" maxlength="20" required />
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Johndoe12"
+                        pattern="[A-Za-z0-9]{3,20}"
+                        required
+                    />
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="••••••" maxlength="30" required />
+                    <!--
+                        1 Uppercase
+                        1 Lowercase
+                        1 Number
+                        1 Symbol (!@#$%^&*_=+-)
+                        6-30 characters 
+                    -->
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="••••••"
+                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{6,30}$"
+                        required
+                    />
                     <label for="repeat-password">Repeat password</label>
                     <input
                         type="password"
                         id="repeat-password"
                         name="repeat-password"
                         placeholder="••••••"
-                        maxlength="30"
+                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{6,30}$"
                         required
                     />
                     <button type="submit" class="button register-form__button">Register</button>

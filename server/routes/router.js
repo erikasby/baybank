@@ -6,14 +6,14 @@ const articleController = require('../controllers/articleController');
 const router = express.Router();
 
 // Main routes
-router.get('/', mainController.home);
-router.get('/login', mainController.login);
-router.get('/register', mainController.register);
+router.get('/', mainController.getIndex);
+router.get('/login', mainController.getLogin);
+router.get('/register', mainController.getRegister);
 
 // Article routes
-router.get('/news', articleController.news);
-router.get('/news/:id', articleController.newsArticle);
-router.get('/press', articleController.press);
-router.get('/press/:id', articleController.pressArticle);
+router.get('/news', articleController.getNews);
+router.get('/news/:id', articleController.getNewsArticle);
+router.get('/press', articleController.getPress);
+router.get('/press/:id', articleController.getPressArticle);
 
 module.exports = router;

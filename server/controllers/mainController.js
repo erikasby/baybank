@@ -20,7 +20,7 @@ for (let i = 0; i < headings.length; i++) {
 
 // GET
 // Home
-exports.home = async (req, res, next) => {
+exports.getIndex = async (req, res, next) => {
     try {
         res.render('index', {
             title: 'Home',
@@ -37,7 +37,7 @@ exports.home = async (req, res, next) => {
     }
 };
 
-exports.login = async (req, res, next) => {
+exports.getLogin = async (req, res, next) => {
     try {
         res.render('login', {
             title: 'Login',
@@ -53,7 +53,7 @@ exports.login = async (req, res, next) => {
     }
 };
 
-exports.register = async (req, res, next) => {
+exports.getRegister = async (req, res, next) => {
     try {
         res.render('register', {
             title: 'Register',
