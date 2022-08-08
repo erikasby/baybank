@@ -1,8 +1,7 @@
 .hero {
     display: flex;
     position: relative;
-    background-color: var(--blue-700);
-    margin-bottom: 8rem;
+    background-color: var(--blue-900);
 }
 
 .hero__container {

@@ -47,11 +47,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-*:focus {
-    outline: 2px dashed;
-    outline-color: var(--black);
-}
-
 html,
 body {
     height: 100%;
@@ -87,5 +82,5 @@ a:active {
 }
 
 .active {
-    color: var(--blue-700);
+    color: var(--blue-600);
 }

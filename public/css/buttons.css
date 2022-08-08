@@ -1,19 +1,34 @@
 .button {
-    /* display: inline-flex; */
     font-weight: 500;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: var(--neutral-50);
-    padding: 1rem 3rem;
-    background-color: var(--red-500);
-    border: 2px solid var(--red-500);
+    padding: 1rem 1.5rem;
+    background-color: var(--blue-600);
+    border-radius: 0.5rem;
+    border: none;
+    transition: background-color 0.2s;
 }
 
 .button:hover,
 .button:active {
-    background-color: transparent;
+    background-color: var(--blue-700);
     cursor: pointer;
 }
 
 .button:focus {
-    outline-color: var(--neutral-900);
+    outline: 3px solid var(--blue-400);
+}
+
+.button--light {
+    background-color: var(--blue-500);
+}
+
+.button--light:hover,
+.button--light:active {
+    background-color: var(--blue-600);
+    cursor: pointer;
+}
+
+.button--light:focus {
+    outline: 3px solid var(--blue-300);
 }

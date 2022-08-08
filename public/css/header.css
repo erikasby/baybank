@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,700&display=swap');
 
+.header {
+    background-color: var(--neutral-50);
+}
+
 .header__container {
     margin: 0 auto;
     max-width: 100rem;
@@ -18,14 +22,10 @@
     font-weight: 800;
 }
 
-.logo__bay {
-    font-family: inherit;
-    color: var(--blue-700);
-}
-
+.logo__bay,
 .logo__bank {
     font-family: inherit;
-    color: var(--blue-700);
+    color: var(--blue-600);
 }
 
 .nav {
@@ -38,40 +38,36 @@
     gap: 0.5rem;
 }
 
-.nav__link {
-    color: var(--neutral-900);
-    font-weight: 400;
+.nav__link,
+.user__login,
+.user__register {
+    color: var(--blue-900);
+    font-weight: 500;
     transition: color 0.2s;
     padding: 0.5rem 1rem;
     font-size: 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
 }
 
 .nav__link:hover,
-.nav__link:active {
-    text-decoration: underline;
+.nav__link:active,
+.user__login:hover,
+.user__login:active,
+.user__register:hover,
+.user__register:active {
+    background-color: var(--blue-100);
+}
+
+.nav__link:focus,
+.user__login:focus,
+.user__register:focus,
+.logo:focus {
+    outline: 3px solid var(--blue-600);
 }
 
 .user {
     display: flex;
     flex-direction: row;
-}
-
-.user__login {
-    border-right: 1px solid var(--neutral-400);
-}
-
-.user__login,
-.user__register {
-    color: var(--neutral-900);
-    font-weight: 400;
-    transition: color 0.2s;
-    padding: 0 1rem;
-    font-size: 1rem;
-}
-
-.user__login:hover,
-.user__login:active,
-.user__register:hover,
-.user__register:active {
-    text-decoration: underline;
+    gap: 0.5rem;
 }

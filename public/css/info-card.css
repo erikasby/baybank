@@ -1,5 +1,5 @@
 .info-card {
-    margin-bottom: 8rem;
+    padding: 8rem 0;
 }
 
 .info-card__container {
@@ -12,15 +12,16 @@
     height: 35rem;
     order: 1;
     gap: 8rem;
+    justify-content: start;
 }
 
 .info-card__text-wrapper {
-    width: 55%;
+    width: 35%;
 }
 
 .info-card__main-heading {
     font-size: 4rem;
-    color: var(--neutral-900);
+    color: var(--blue-900);
     line-height: 1.1;
     margin-bottom: 3rem;
 }
@@ -35,13 +36,18 @@
     width: 45%;
     height: 35rem;
     object-fit: cover;
-    background-color: aqua;
-}
-
-.info-card__button:hover {
-    color: var(--neutral-900);
+    border-radius: 0.5rem;
+    overflow: hidden;
 }
 
 .info-card:nth-child(2n) > .info-card__container > .info-card__img {
     order: 2;
+}
+
+.info-card:nth-child(2n) > .info-card__container {
+    justify-content: end;
+}
+
+.info-card:nth-child(2n) {
+    background-color: var(--blue-50);
 }

@@ -1,5 +1,5 @@
 .footer {
-    background-color: var(--neutral-800);
+    background-color: var(--blue-900);
 }
 
 .footer__container {
@@ -25,7 +25,12 @@
     font-weight: 400;
 }
 
-.footer__link:hover {
+.footer__link:focus {
+    outline: 3px solid var(--blue-50);
+}
+
+.footer__link:hover,
+.footer__link:active {
     text-decoration: underline;
 }
 
