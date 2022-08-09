@@ -19,6 +19,11 @@
     outline: 3px solid var(--blue-400);
 }
 
+.button--small {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+}
+
 .button--light {
     background-color: var(--blue-500);
 }

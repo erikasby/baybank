@@ -6,7 +6,7 @@
     max-width: 20rem;
     width: 90%;
     margin: 0 auto;
-    padding: 4rem 0;
+    padding: 2rem 0;
 }
 
 .password-separator {
@@ -19,4 +19,8 @@
 
 .password-separator > label {
     margin-bottom: 0;
+}
+
+.form__additional-link--login {
+    margin-top: 1rem;
 }

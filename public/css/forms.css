@@ -4,20 +4,31 @@
     width: 100%;
 }
 
-.form__label {
+.form__label,
+.form__error {
     color: var(--neutral-900);
     font-weight: 500;
-    margin-bottom: 0.5rem;
+}
+
+.form__error {
+    font-size: 0.8rem;
+    color: var(--red-600);
+    display: none;
+}
+
+.form__error--active {
+    display: block;
 }
 
 .form__input {
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: var(--neutral-900);
     background-color: var(--blue-100);
     border: none;
     margin-bottom: 1.5rem;
-    padding: 1rem 1.5rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 0.5rem;
 }
 
@@ -27,6 +38,15 @@
 
 .form__input::placeholder {
     color: var(--blue-300);
+}
+
+.form__input--invalid {
+    outline: 3px solid var(--red-600);
+    background-color: var(--red-100);
+}
+
+.form__input--invalid::placeholder {
+    color: var(--red-300);
 }
 
 .form__additional-link {
@@ -41,4 +61,19 @@
 
 .form__additional-link:focus {
     outline: 3px solid var(--blue-600);
+}
+
+/* Removals */
+body {
+    justify-content: start;
+}
+
+.footer,
+.nav,
+.user {
+    display: none;
+}
+
+.header__container {
+    justify-content: center;
 }
