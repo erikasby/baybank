@@ -1,4 +1,5 @@
 const form = document.querySelector('.form');
+
 const usernameError = document.querySelector('#username').previousElementSibling;
 const passwordError = document.querySelector('#password').previousElementSibling;
 

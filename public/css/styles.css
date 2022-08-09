@@ -13,7 +13,6 @@
     --blue-700: #1d4ed8;
     --blue-800: #1e40af;
     --blue-900: #1e3a8a;
-    --blue-900-transparent: rgba(30, 58, 138, 0.1);
 
     /* Red */
     --red-50: #fef2f2;
@@ -62,6 +61,7 @@ body {
     justify-content: space-between;
 }
 
+/* Remove arrows from type="number" input */
 input[type='number']::-webkit-inner-spin-button,
 input[type='number']::-webkit-outer-spin-button {
     -webkit-appearance: none;
