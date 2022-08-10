@@ -37,3 +37,17 @@
 .button--light:focus {
     outline: 3px solid var(--blue-300);
 }
+
+.button--dark {
+    background-color: var(--blue-800);
+}
+
+.button--dark:hover,
+.button--dark:active {
+    background-color: var(--blue-900);
+    cursor: pointer;
+}
+
+.button--dark:focus {
+    outline: 3px solid var(--blue-600);
+}

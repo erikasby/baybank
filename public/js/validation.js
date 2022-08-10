@@ -1,22 +1,27 @@
 const form = document.querySelector('.form');
+const register = document.querySelector('.register');
 
-const emailError = document.querySelector('#email').previousElementSibling;
-const usernameError = document.querySelector('#username').previousElementSibling;
-const passwordError = document.querySelector('#password').previousElementSibling;
-const repeatPasswordError = document.querySelector('#repeat-password').previousElementSibling;
+const usernameError = document.getElementById('username').previousElementSibling;
+const passwordError = document.getElementById('password').previousElementSibling;
+let emailError,
+    repeatPasswordError = null;
+if (register) {
+    emailError = document.getElementById('email').previousElementSibling;
+    repeatPasswordError = document.getElementById('repeat-password').previousElementSibling;
+}
 
-const email = document.getElementById('email');
 const username = document.getElementById('username');
 const password = document.getElementById('password');
-const repeatPassword = document.getElementById('repeat-password');
+let email,
+    repeatPassword = null;
+if (register) {
+    email = document.getElementById('email');
+    repeatPassword = document.getElementById('repeat-password');
+}
 
 // Event listeners
 form.addEventListener('submit', (event) => {
-    validateRegister(event);
-});
-
-email.addEventListener('focus', (event) => {
-    elementToDefaultStyling(email, emailError);
+    validate(event);
 });
 
 username.addEventListener('focus', (event) => {
@@ -27,9 +32,15 @@ password.addEventListener('focus', (event) => {
     elementToDefaultStyling(password, passwordError);
 });
 
-repeatPassword.addEventListener('focus', (event) => {
-    elementToDefaultStyling(repeatPassword, repeatPasswordError);
-});
+if (register) {
+    email.addEventListener('focus', (event) => {
+        elementToDefaultStyling(email, emailError);
+    });
+
+    repeatPassword.addEventListener('focus', (event) => {
+        elementToDefaultStyling(repeatPassword, repeatPasswordError);
+    });
+}
 
 // Helpers
 const showError = (element, elementError, errorTextContent, event) => {
@@ -45,12 +56,14 @@ const elementToDefaultStyling = (element, elementError) => {
     element.classList.remove('form__input--invalid');
 };
 
-// Validation
-const validateRegister = (event) => {
+// Validation (order of if statements is important for the UI)
+const validate = (event) => {
     let validated = true;
 
-    validated = validateEmail(event);
-    if (!validated) return;
+    if (register) {
+        validated = validateEmail(event);
+        if (!validated) return;
+    }
 
     validated = validateUsername(event);
     if (!validated) return;
@@ -58,8 +71,10 @@ const validateRegister = (event) => {
     validated = validatePassword(event);
     if (!validated) return;
 
-    validated = validateRepeatPassword(event);
-    if (!validated) return;
+    if (register) {
+        validated = validateRepeatPassword(event);
+        if (!validated) return;
+    }
 };
 
 const validateEmail = (event) => {
@@ -138,7 +153,7 @@ const validatePassword = (event) => {
     }
 
     if (password.validity.patternMismatch) {
-        const errorTextContent = `Password should atleast have 1 uppercase letter, 1 lowercase letter, 1 number, 1 symbol (!@#$%^&*_=+-)`;
+        const errorTextContent = `Password should atleast have 1 uppercase letter, 1 lowercase letter, 1 number, 1 symbol !@#$%^&*_=+-`;
         showError(password, passwordError, errorTextContent, event);
         return;
     }

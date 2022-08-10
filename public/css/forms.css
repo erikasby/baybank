@@ -63,17 +63,30 @@
     outline: 3px solid var(--blue-600);
 }
 
-/* Removals */
+/* Footer and main layout update */
 body {
     justify-content: start;
 }
 
-.footer,
+.header__container {
+    justify-content: center;
+}
+
+.footer {
+    background-color: var(--neutral-50);
+}
+
+.footer__container {
+    padding: 2rem 0;
+}
+
+.footer__link {
+    color: var(--neutral-900);
+}
+
+.footer-logo,
+.footer__copyright,
 .nav,
 .user {
     display: none;
-}
-
-.header__container {
-    justify-content: center;
 }

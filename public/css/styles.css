@@ -76,7 +76,7 @@ a:active {
     text-decoration: none;
 }
 
-.main-content {
+.main {
     display: flex;
     flex-direction: column;
 }

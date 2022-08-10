@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('includes/head.ejs') %>
+        <link rel="stylesheet" href="/css/articles.css" />
+        <title><%= title %></title>
+    </head>
+    <body>
+        <%- include('includes/header.ejs', {active: active}) %>
+        <main class="main">
+            <div class="articles">
+                <div class="articles__trending">
+                    <h2 class="articles__heading"></h2>
+                    <div class="articles__articles"><%- include('includes/article-small.ejs') %></div>
+                </div>
+                <div class="articles__current">
+                    <h2 class="articles__heading"></h2>
+                    <div class="articles__articles">
+                        <!-- prettier-ignore -->
+                        <%- include('includes/article-large.ejs') %>
+                        <%- include('includes/article-medium.ejs') %> 
+                        <%- include('includes/article.ejs') %>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%- include('includes/footer.ejs') %>
+    </body>
+</html>
