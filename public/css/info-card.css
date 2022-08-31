@@ -1,5 +1,6 @@
 .info-card {
-    padding: 8rem 0;
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--blue-100);
 }
 
 .info-card__container {
@@ -9,45 +10,82 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 35rem;
     order: 1;
+    justify-content: center;
     gap: 8rem;
-    justify-content: start;
+
+    /* Animation */
+    opacity: 0;
+    transform: translateY(25%);
+}
+
+.info-card__container.unhidden {
+    /* Animation */
+    transition: opacity 0.4s, transform 0.4s;
+    opacity: 100%;
+    transform: translateY(0);
 }
 
 .info-card__text-wrapper {
-    width: 35%;
+    max-width: 30rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: start;
 }
 
 .info-card__main-heading {
-    font-size: 4rem;
-    color: var(--blue-900);
-    line-height: 1.1;
-    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--blue-600);
+    line-height: 1.2;
 }
 
 .info-card__paragraph {
     color: var(--neutral-900);
-    margin-bottom: 3rem;
     font-weight: 400;
+    line-height: 1.8;
+    font-size: 1.1rem;
 }
 
 .info-card__img {
-    width: 45%;
-    height: 35rem;
+    max-width: 20rem;
+    width: 100%;
     object-fit: cover;
-    border-radius: 0.5rem;
-    overflow: hidden;
 }
 
 .info-card:nth-child(2n) > .info-card__container > .info-card__img {
     order: 2;
 }
 
-.info-card:nth-child(2n) > .info-card__container {
-    justify-content: end;
+.info-card:nth-child(2n-1) {
+    background-color: var(--blue-50);
 }
 
-.info-card:nth-child(2n) {
-    background-color: var(--blue-50);
+@media screen and (max-width: 51rem) {
+    .info-card:nth-child(2n) > .info-card__container > .info-card__img {
+        order: 0;
+    }
+
+    .info-card__container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .info-card__img {
+        max-width: 10rem;
+    }
+
+    .info-card__main-heading {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .info-card__paragraph {
+        text-align: center;
+    }
+
+    .info-card__text-wrapper {
+        align-items: center;
+    }
 }

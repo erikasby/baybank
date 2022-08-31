@@ -1,33 +1,69 @@
 const mongoose = require('mongoose');
 
 const articleSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: 'This field is required.',
-  },
-  secondaryTitle: {
-    type: String,
-    required: 'This field is required.',
-  },
-  text: {
-    type: String,
-    required: 'This field is required.',
-  },
-  date: {
-    type: String,
-    required: 'This field is required.',
-  },
-  category: {
-    type: String,
-    enum: ['News', 'Press'],
-    required: 'This field is required.',
-  },
-  image: {
-    type: String,
-    required: 'This field is required.',
-  },
+    author: {
+        type: mongoose.Types.ObjectId,
+        required: true,
+    },
+    title: {
+        type: String,
+        required: true,
+    },
+    secondaryTitle: {
+        type: String,
+        required: true,
+    },
+    content: {
+        type: String,
+        required: true,
+    },
+    category: {
+        type: String,
+        required: true,
+    },
+    subCategory: {
+        type: String,
+        required: true,
+    },
+    imageLink: {
+        type: String,
+        required: true,
+    },
+    createdAt: {
+        type: Date,
+        required: true,
+    },
+    updatedAt: {
+        type: Date,
+        required: true,
+    },
+    likesCount: {
+        type: Number,
+        default: 0,
+        required: true,
+    },
+    likedBy: {
+        type: Array,
+        default: [],
+        required: true,
+    },
+    commentsCount: {
+        type: String,
+        default: 0,
+        required: true,
+    },
+    comments: {
+        type: Array,
+        default: [],
+        required: true,
+    },
+    watchCount: {
+        type: Number,
+        default: 0,
+        required: true,
+    },
 });
 
-articleSchema.index({title: 'text', text: 'text'});
+articleSchema.index({title: 'text', content: 'text'});
 
 module.exports = mongoose.model('Article', articleSchema);

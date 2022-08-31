@@ -6,12 +6,14 @@
         </a>
         <nav class="nav">
             <ul class="nav__links">
-                <li><a class="nav__link <%= active == "Home" ? "active" : "" %>" href="/">Home</a></li>
+                <li><a class="nav__link <%= active === "Home" ? "active" : "" %>" href="/">Home</a></li>
                 <li><a class="nav__link <%= active === "Press" ? "active" : "" %>" href="/news/press">Press</a></li>
                 <li><a class="nav__link <%= active === "Business" ? "active" : "" %>" href="/news/business">Business</a></li>
                 <li><a class="nav__link <%= active === "Technology" ? "active" : "" %>" href="/news/technology">Technology</a></li>
+                <li><a class="nav__link <%= active === "Lifestyle" ? "active" : "" %>" href="/news/lifestyle">Lifestyle</a></li>
             </ul>
         </nav>
+        <div class="header__hamburger">☰</div>
         <div class="user">
             <a href="/login" class="user__login <%= active === "Login" ? "active" : "" %>">Login</a>
             <a href="/register" class="user__register <%= active === "Register" ? "active" : "" %>">Register</a>

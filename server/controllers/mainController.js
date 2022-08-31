@@ -1,8 +1,10 @@
+'use strict';
+
 const headings = [
-    'Control your environment.',
-    'Stable high performance.',
-    'Make your transactions secure.',
-    'Perform your task anywhere, anytime.',
+    'Control your environment',
+    'Stable high performance',
+    'Make your transactions secure',
+    'Perform your task anywhere, anytime',
 ];
 const paragraphs = [
     'Our plugin system give you ability to see and perform tasks how you want in many different ways.',
@@ -10,7 +12,7 @@ const paragraphs = [
     'All transactions have history of who, when, why and how they were made all the time. There is simply no possibility of your funds getting hijacked.',
     'Want to get money transferred to your account on Sunday night in Seychelles? Let us make that happen in a matter of seconds.',
 ];
-const img = ['index-1.avif', 'index-2.avif', 'index-3.avif', 'index-4.avif'];
+const img = ['team_work.svg', 'fast_working.svg', 'money_transfer.svg', 'relaxing.svg'];
 
 const cards = [];
 
@@ -18,12 +20,11 @@ for (let i = 0; i < headings.length; i++) {
     cards.push({heading: headings[i], paragraph: paragraphs[i], img: img[i]});
 }
 
-// GET
-// Home
+// GET Home
 exports.getIndex = async (req, res, next) => {
     try {
         res.render('index', {
-            title: 'Home',
+            title: 'Home' + ' | BayBank - the best solution for both individuals and companies',
             path: '/',
             active: 'Home',
             cards: cards,
@@ -40,13 +41,13 @@ exports.getIndex = async (req, res, next) => {
 exports.getLogin = async (req, res, next) => {
     try {
         res.render('login', {
-            title: 'Login',
+            title: 'Login' + ' | BayBank - the best solution for both individuals and companies',
             path: '/login',
             active: 'Login',
         });
     } catch (error) {
         res.render('404', {
-            title: '404',
+            title: '404' + ' | BayBank - the best solution for both individuals and companies',
             path: '/404',
             active: '',
         });

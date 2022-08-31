@@ -2,17 +2,22 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--blue-50);
+    border: 1px solid var(--blue-100);
 }
 
 .form__label,
 .form__error {
     color: var(--neutral-900);
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 0.9rem;
 }
 
 .form__error {
     font-size: 0.8rem;
-    color: var(--red-600);
+    color: var(--red-400);
     display: none;
 }
 
@@ -21,11 +26,12 @@
 }
 
 .form__input {
-    font-weight: 500;
-    font-size: 0.8rem;
+    font-weight: 400;
+    font-size: 0.9rem;
     color: var(--neutral-900);
-    background-color: var(--blue-100);
+    background-color: var(--neutral-50);
     border: none;
+    outline: 1px solid var(--blue-100);
     margin-bottom: 1.5rem;
     margin-top: 0.5rem;
     padding: 0.5rem 1rem;
@@ -33,34 +39,32 @@
 }
 
 .form__input:focus {
-    outline: 3px solid var(--blue-600);
+    outline: 2px solid var(--blue-500);
 }
 
 .form__input::placeholder {
-    color: var(--blue-300);
+    color: var(--neutral-300);
 }
 
 .form__input--invalid {
-    outline: 3px solid var(--red-600);
-    background-color: var(--red-100);
+    outline: 2px solid var(--red-400);
+    background-color: var(--red-50);
 }
 
 .form__input--invalid::placeholder {
-    color: var(--red-300);
+    color: var(--red-200);
 }
 
 .form__additional-link {
-    font-weight: 500;
-    color: var(--blue-600);
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--blue-500);
 }
 
 .form__additional-link:hover,
-.form__additional-link:active {
-    text-decoration: underline;
-}
-
+.form__additional-link:active,
 .form__additional-link:focus {
-    outline: 3px solid var(--blue-600);
+    text-decoration: underline;
 }
 
 /* Footer and main layout update */
@@ -68,12 +72,9 @@ body {
     justify-content: start;
 }
 
-.header__container {
-    justify-content: center;
-}
-
 .footer {
     background-color: var(--neutral-50);
+    border-top: none;
 }
 
 .footer__container {
@@ -85,8 +86,6 @@ body {
 }
 
 .footer-logo,
-.footer__copyright,
-.nav,
-.user {
+.footer__copyright {
     display: none;
 }

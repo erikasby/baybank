@@ -1,6 +1,9 @@
+'use strict';
+
 const form = document.querySelector('.form');
 const register = document.querySelector('.register');
 
+// Error labels
 const usernameError = document.getElementById('username').previousElementSibling;
 const passwordError = document.getElementById('password').previousElementSibling;
 let emailError,
@@ -10,6 +13,7 @@ if (register) {
     repeatPasswordError = document.getElementById('repeat-password').previousElementSibling;
 }
 
+// Inputs
 const username = document.getElementById('username');
 const password = document.getElementById('password');
 let email,
@@ -20,26 +24,12 @@ if (register) {
 }
 
 // Event listeners
-form.addEventListener('submit', (event) => {
-    validate(event);
-});
-
-username.addEventListener('focus', (event) => {
-    elementToDefaultStyling(username, usernameError);
-});
-
-password.addEventListener('focus', (event) => {
-    elementToDefaultStyling(password, passwordError);
-});
-
+form.addEventListener('submit', (event) => validate(event));
+username.addEventListener('focus', (event) => elementToDefaultStyling(username, usernameError));
+password.addEventListener('focus', (event) => elementToDefaultStyling(password, passwordError));
 if (register) {
-    email.addEventListener('focus', (event) => {
-        elementToDefaultStyling(email, emailError);
-    });
-
-    repeatPassword.addEventListener('focus', (event) => {
-        elementToDefaultStyling(repeatPassword, repeatPasswordError);
-    });
+    email.addEventListener('focus', (event) => elementToDefaultStyling(email, emailError));
+    repeatPassword.addEventListener('focus', (event) => elementToDefaultStyling(repeatPassword, repeatPasswordError));
 }
 
 // Helpers
@@ -56,7 +46,7 @@ const elementToDefaultStyling = (element, elementError) => {
     element.classList.remove('form__input--invalid');
 };
 
-// Validation (order of if statements is important for the UI)
+// Validation (order of if statements in validate() function is important for the UI)
 const validate = (event) => {
     let validated = true;
 

@@ -1,53 +1,76 @@
 .button {
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--neutral-50);
     padding: 1rem 1.5rem;
-    background-color: var(--blue-600);
+    background-color: var(--blue-500);
     border-radius: 0.5rem;
     border: none;
     transition: background-color 0.2s;
-}
-
-.button:hover,
-.button:active {
-    background-color: var(--blue-700);
     cursor: pointer;
-}
-
-.button:focus {
-    outline: 3px solid var(--blue-400);
 }
 
 .button--small {
     padding: 0.5rem 1rem;
-    font-size: 0.8rem;
 }
 
-.button--light {
-    background-color: var(--blue-500);
+.button--large {
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
-.button--light:hover,
-.button--light:active {
-    background-color: var(--blue-600);
-    cursor: pointer;
+.button:hover,
+.button:active,
+.button:focus {
+    background-color: var(--blue-400);
 }
 
-.button--light:focus {
-    outline: 3px solid var(--blue-300);
+.button--transparent {
+    background-color: transparent;
+    color: var(--neutral-900);
 }
 
-.button--dark {
-    background-color: var(--blue-800);
+.button--transparent:hover,
+.button--transparent:active,
+.button--transparent:focus {
+    background-color: var(--neutral-200);
 }
 
-.button--dark:hover,
-.button--dark:active {
-    background-color: var(--blue-900);
-    cursor: pointer;
+.button.button--unliked {
+    background-color: transparent;
+    color: var(--neutral-500);
+    font-weight: 500;
+    font-size: 1rem;
+    outline: none;
 }
 
-.button--dark:focus {
-    outline: 3px solid var(--blue-600);
+.button.button--unliked:hover,
+.button.button--unliked:active {
+    background-color: transparent;
+    outline: none;
+}
+
+.button.button--unliked:focus {
+    background-color: var(--neutral-200);
+    outline: none;
+}
+
+.button.button--liked {
+    background-color: transparent;
+    color: var(--red-400);
+    font-weight: 500;
+    font-size: 1rem;
+    outline: none;
+}
+
+.button.button--liked:hover,
+.button.button--liked:active {
+    color: var(--red-400);
+    background-color: transparent;
+    outline: none;
+}
+
+.button.button--liked:focus {
+    background-color: var(--red-50);
+    outline: none;
 }

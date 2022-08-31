@@ -2,29 +2,41 @@
 
 /* All colors are taken from Tailwind Colors docs */
 :root {
-    /* Blue */
-    --blue-50: #eff6ff;
-    --blue-100: #dbeafe;
-    --blue-200: #bfdbfe;
-    --blue-300: #93c5fd;
-    --blue-400: #60a5fa;
-    --blue-500: #3b82f6;
-    --blue-600: #2563eb;
-    --blue-700: #1d4ed8;
-    --blue-800: #1e40af;
-    --blue-900: #1e3a8a;
+    /* Blue - Main color is 500 */
+    --blue-50: hsl(217, 89%, 96%);
+    --blue-100: hsl(217, 89%, 91%);
+    --blue-200: hsl(217, 89%, 81%);
+    --blue-300: hsl(217, 89%, 71%);
+    --blue-400: hsl(217, 89%, 61%);
+    --blue-500: hsl(217, 89%, 51%);
+    --blue-600: hsl(217, 89%, 41%);
+    --blue-700: hsl(217, 89%, 31%);
+    --blue-800: hsl(217, 89%, 21%);
+    --blue-900: hsl(217, 89%, 11%);
 
-    /* Red */
-    --red-50: #fef2f2;
-    --red-100: #fee2e2;
-    --red-200: #fecaca;
-    --red-300: #fca5a5;
-    --red-400: #f87171;
-    --red-500: #ef4444;
-    --red-600: #dc2626;
-    --red-700: #b91c1c;
-    --red-800: #991b1b;
-    --red-900: #7f1d1d;
+    /* Red*/
+    --red-50: hsl(5, 69%, 89%);
+    --red-100: hsl(5, 69%, 84%);
+    --red-200: hsl(5, 69%, 74%);
+    --red-300: hsl(5, 69%, 64%);
+    --red-400: hsl(5, 69%, 54%);
+    --red-500: hsl(5, 69%, 44%);
+    --red-600: hsl(5, 69%, 34%);
+    --red-700: hsl(5, 69%, 24%);
+    --red-800: hsl(5, 69%, 14%);
+    --red-900: hsl(5, 69%, 4%);
+
+    /* Green */
+    --green-50: hsl(151, 83%, 89%);
+    --green-100: hsl(151, 83%, 84%);
+    --green-200: hsl(151, 83%, 74%);
+    --green-300: hsl(151, 83%, 64%);
+    --green-400: hsl(151, 83%, 54%);
+    --green-500: hsl(151, 83%, 44%);
+    --green-600: hsl(151, 83%, 34%);
+    --green-700: hsl(151, 83%, 24%);
+    --green-800: hsl(151, 83%, 14%);
+    --green-900: hsl(151, 83%, 4%);
 
     /* Neutral */
     --neutral-50: #fafafa;
@@ -40,11 +52,35 @@
 }
 
 * {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Reset start */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
+
+*:focus {
+    outline: none;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+}
+
+/* Remove arrows from type="number" input */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+/* Reset end */
 
 html,
 body {
@@ -61,26 +97,21 @@ body {
     justify-content: space-between;
 }
 
-/* Remove arrows from type="number" input */
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-a:link,
-a:visited,
-a:hover,
-a:active {
-    text-decoration: none;
-}
-
 .main {
     display: flex;
     flex-direction: column;
 }
 
 .active {
-    color: var(--blue-600);
+    color: var(--blue-200);
+}
+
+.main {
+    justify-self: start;
+}
+
+.page-not-found__img {
+    margin: 0 auto;
+    max-width: 50rem;
+    width: 100%;
 }

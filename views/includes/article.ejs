@@ -1,18 +1,24 @@
-<% for (let i = 0; i < 6; i++) { %>
+<% for (let i = 0; i < 9; i++) { %>
 <article class="articles__article">
-    <!-- <img class="articles__img" src="" alt="" /> -->
-    <div class="articles__img">
-        <div class="articles__wrapper">
-            <div class="articles__separator">
-                <p class="articles__category">Press</p>
-                <p class="articles__date">2022-08-10</p>
+    <div class="article__header">
+        <img class="article__pictureLink" src="<%= author.pictureLink %>" alt="Profile picture" />
+        <div class="article__data">
+            <div class="article__split">
+                <p class="article__username"><%= author.username %></p>
+                <div class="article__watches"><i class="fa-solid fa-eye"></i> <%= article.watchCount %></div>
+                <div class="article__likes"><i class="fa-solid fa-heart"></i> <%= article.likesCount%></div>
             </div>
-            <h3 class="articles__article-heading">BayBank increases employees salary pay by 20%</h3>
-            <h4 class="articles__article-secondary-heading">
-                BayBank is on it's way of increases salaries for their employees. This is happening due to high
-                inflation numbers
-            </h4>
+            <div class="article__split">
+                <p class="article__updatedAt"><%= article.updatedAt %></p>
+                <p class="article__sub-category"><%= article.subCategory %></p>
+            </div>
         </div>
     </div>
+    <img class="articles__img" src="/img/news.avif" alt="" />
+    <h2 href="#" class="articles__article-title">Build for the public</h2>
+    <h3 href="#" class="articles__article-secondary-title">
+        Build for people on Twitter to integrate or improve their experience on the platform.
+    </h3>
+    <a href="/news/press/1" class="articles__link button button--small">Learn more</a>
 </article>
 <% } %>

@@ -21,16 +21,13 @@
 
 .footer__link {
     color: var(--neutral-50);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 400;
 }
 
-.footer__link:focus {
-    outline: 3px solid var(--blue-50);
-}
-
 .footer__link:hover,
-.footer__link:active {
+.footer__link:active,
+.footer__link:focus {
     text-decoration: underline;
 }
 
