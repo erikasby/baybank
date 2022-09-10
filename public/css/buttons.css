@@ -26,14 +26,14 @@
 }
 
 .button--transparent {
-    background-color: var(--neutral-200);
+    background-color: var(--neutral-150);
     color: var(--neutral-950);
 }
 
 .button--transparent:hover,
 .button--transparent:active,
 .button--transparent:focus {
-    background-color: var(--neutral-250);
+    background-color: var(--neutral-200);
 }
 
 .button.button--unliked {

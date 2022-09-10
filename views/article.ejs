@@ -42,7 +42,7 @@
                     <div class="article__content"><%- article.content %></div>
                     <button
                         type="button"
-                        class="button button--small <%= Object.values(article.likedBy).includes(author.id) ? 'button--liked' : 'button--unliked' %> article__likesCount"
+                        class="button button--small <%= Object.values(article.likedBy).includes(author._id) ? 'button--liked' : 'button--unliked' %> article__likesCount"
                     >
                         <i class="fa-solid fa-heart"></i> <%= article.likesCount %>
                     </button>

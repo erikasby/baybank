@@ -34,12 +34,15 @@ const renderArticles = async (req, res, next, path, category) => {
     try {
         // const articles = await Article.find({category: category}).sort({_id: -1});
 
+        const lastArticle = article;
+
         res.render('articles', {
             title: category + ' | BayBank - the best solution for both individuals and companies',
             path: path,
             active: category,
             author: user,
             article: article,
+            lastArticle: lastArticle,
         });
     } catch (error) {
         res.render('404', {

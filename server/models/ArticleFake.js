@@ -1,4 +1,6 @@
 const Article = {
+    _id: '345mkfm324f34',
+    author: '345bjh345b34j5h3b54',
     title: "Google's New Programming Language is Called Carbon",
     secondaryTitle: 'Google Introduced Carbon to be a Successor of C++',
     subCategory: 'Software',
@@ -7,7 +9,7 @@ const Article = {
     likesCount: 35,
     watchCount: 505,
     likedBy: {
-        userId: 1,
+        userId: '345bjh345b34j5h3b54',
     },
     content: `
 We know Google's obsession with creating different frameworks and launching a few programming languages. Dart was one of the programming languages launched by Google which was object-oriented and a web-based programming language.

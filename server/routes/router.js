@@ -28,7 +28,7 @@ router.get('/news/lifestyle/:articleId', articleController.getLifestyleArticle);
 // router.get('/news/:articleId/likes', articleController.getArticleLikes);
 // router.post('/news/:articleId/likes/:userId', articleController.postArticleLikeByUserId);
 // router.get('/news/:articleId/comments', articleController.getArticleComments);
-// router.post('/news/:articleId/comments/:userId', articleController.postArticleCommentByUserId);
+// router.post('/news/:articleId/comments/:commentId/:userId', articleController.postArticleCommentByUserId);
 
 // Article admin routes
 router.get('/news/new', articleAdminController.getCreateArticle);
@@ -38,6 +38,5 @@ router.post('/news/:id/edit', articleAdminController.postEditArticle);
 
 // APIs
 router.get('/api/load-more-news', articleHelpers.loadMoreNews);
-router.get('/api/get-article-content/:id', articleHelpers.getArticleContent);
 
 module.exports = router;
