@@ -17,32 +17,36 @@
         <%- include('includes/header.ejs', {active: active}) %>
         <main class="main">
             <article class="article">
-                <div class="article__header">
-                    <img class="article__pictureLink" src="<%= author.pictureLink %>" alt="Profile picture" />
-                    <div class="article__data">
-                        <div class="article__split">
-                            <p class="article__username"><%= author.username %></p>
-                            <div class="article__watches">
-                                <i class="fa-solid fa-eye"></i> <%= article.watchCount %>
+                <div class="article__container">
+                    <div class="article__header">
+                        <img class="article__pictureLink" src="<%= author.pictureLink %>" alt="Profile picture" />
+                        <div class="article__data">
+                            <div class="article__split">
+                                <p class="article__username"><%= author.username %></p>
+                                <div class="article__watches">
+                                    <i class="fa-solid fa-eye"></i> <%= article.watchCount %>
+                                </div>
+                                <div class="article__likes">
+                                    <i class="fa-solid fa-heart"></i> <%= article.likesCount%>
+                                </div>
                             </div>
-                            <div class="article__likes"><i class="fa-solid fa-heart"></i> <%= article.likesCount%></div>
-                        </div>
-                        <div class="article__split">
-                            <p class="article__updatedAt"><%= article.updatedAt %></p>
-                            <p class="article__sub-category"><%= article.subCategory %></p>
+                            <div class="article__split">
+                                <p class="article__updatedAt"><%= article.updatedAt %></p>
+                                <p class="article__sub-category"><%= article.subCategory %></p>
+                            </div>
                         </div>
                     </div>
+                    <h1 class="article__title"><%= article.title %></h1>
+                    <h2 class="article__secondary-title"><%= article.secondaryTitle %></h2>
+                    <img class="article__imageLink" src="<%= article.imageLink %>" alt="<%= article.title %>" />
+                    <div class="article__content"><%- article.content %></div>
+                    <button
+                        type="button"
+                        class="button button--small <%= Object.values(article.likedBy).includes(author.id) ? 'button--liked' : 'button--unliked' %> article__likesCount"
+                    >
+                        <i class="fa-solid fa-heart"></i> <%= article.likesCount %>
+                    </button>
                 </div>
-                <h1 class="article__title"><%= article.title %></h1>
-                <h2 class="article__secondary-title"><%= article.secondaryTitle %></h2>
-                <img class="article__imageLink" src="<%= article.imageLink %>" alt="<%= article.title %>" />
-                <div class="article__content"><%- article.content %></div>
-                <button
-                    type="button"
-                    class="button button--small <%= Object.values(article.likedBy).includes(author.id) ? 'button--liked' : 'button--unliked' %> article__likesCount"
-                >
-                    <i class="fa-solid fa-heart"></i> <%= article.likesCount %>
-                </button>
             </article>
         </main>
         <%- include('includes/footer.ejs') %>

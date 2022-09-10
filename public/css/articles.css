@@ -5,7 +5,7 @@
     margin: 0 auto;
     max-width: 80rem;
     width: 90%;
-    padding: 4rem 0;
+    padding: 2rem 0;
 }
 
 .articles__articles {
@@ -18,22 +18,22 @@
 .articles__article {
     display: flex;
     flex-direction: column;
-    background-color: var(--blue-50);
+    background-color: var(--neutral-50);
     padding: 1.5rem;
     border-radius: 0.5rem;
-    border: 1px solid var(--blue-100);
+    border: 1px solid var(--neutral-200);
 }
 
 .articles__sub-category {
     font-weight: 600;
-    color: var(--neutral-900);
+    color: var(--neutral-950);
     font-size: 0.9rem;
     display: block;
 }
 
 .articles__date {
     font-weight: 400;
-    color: var(--neutral-900);
+    color: var(--neutral-950);
     font-size: 0.9rem;
     display: block;
     margin-bottom: 1rem;
@@ -50,7 +50,7 @@
 
 .articles__article-title {
     font-weight: 600;
-    color: var(--neutral-900);
+    color: var(--neutral-950);
     font-size: 1.1rem;
     display: block;
     margin-bottom: 1rem;
@@ -59,7 +59,7 @@
 
 .articles__article-secondary-title {
     font-weight: 400;
-    color: var(--neutral-900);
+    color: var(--neutral-950);
     font-size: 1.1rem;
     display: block;
     margin-bottom: 1rem;
@@ -71,7 +71,7 @@
 }
 
 .articles__load-container {
-    margin-top: 3rem;
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,7 +108,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 4rem 0;
+    padding: 2rem 0;
+}
+
+.article__container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--neutral-50);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--neutral-200);
 }
 
 .article__header {
@@ -140,7 +149,7 @@
 }
 
 .article__username {
-    color: var(--neutral-900);
+    color: var(--neutral-950);
     font-size: 0.9rem;
 }
 
@@ -167,7 +176,7 @@
 
 .article__title {
     font-size: 1.9rem;
-    color: var(--neutral-900);
+    color: var(--neutral-950);
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 0.5rem;
@@ -176,7 +185,7 @@
 
 .article__secondary-title {
     font-size: 1.4rem;
-    color: var(--neutral-500);
+    color: var(--neutral-700);
     font-weight: 500;
     margin-bottom: 2rem;
     line-height: 1.2;
@@ -202,7 +211,7 @@
 }
 
 .article__content > * {
-    color: var(--neutral-900);
+    color: var(--neutral-950);
 }
 
 .article__content > h1,
@@ -234,7 +243,6 @@
 .article__content > p {
     padding-bottom: 2rem;
     font-size: 1.1rem;
-    font-family: 'Merriweather', serif;
     line-height: 1.8;
 }
 

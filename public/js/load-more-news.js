@@ -3,7 +3,7 @@
 // Count the number of articles
 const articlesCount = document.querySelectorAll('.articles__article').length;
 
-const url = `/api/load-more-news?articlesCount=${articlesCount}`;
+const url = `/api/load-more-news`;
 
 fetch(url)
     .then((res) => res.text())

@@ -1,6 +1,6 @@
 .almost-footer {
     padding: 4rem 0;
-    background-color: var(--blue-800);
+    background-color: var(--neutral-100);
 }
 
 .almost-footer__container {
@@ -15,7 +15,7 @@
 
 .almost-footer__heading {
     font-size: 2.5rem;
-    color: var(--neutral-50);
+    color: var(--blue-500);
     line-height: 1.1;
     margin-bottom: 3rem;
     text-align: center;

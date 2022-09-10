@@ -1,5 +1,6 @@
 .footer {
-    background-color: var(--blue-900);
+    background-color: var(--neutral-50);
+    border-top: 1px solid var(--neutral-200);
 }
 
 .footer__container {
@@ -20,7 +21,7 @@
 }
 
 .footer__link {
-    color: var(--neutral-50);
+    color: var(--neutral-400);
     font-size: 0.8rem;
     font-weight: 400;
 }
@@ -41,16 +42,16 @@
 
 .footer-logo__bay {
     font-family: inherit;
-    color: var(--neutral-50);
+    color: var(--neutral-500);
 }
 
 .footer-logo__bank {
     font-family: inherit;
-    color: var(--neutral-50);
+    color: var(--neutral-500);
 }
 
 .footer__copyright {
     font-size: 0.7rem;
     font-weight: 400;
-    color: var(--neutral-50);
+    color: var(--neutral-500);
 }
