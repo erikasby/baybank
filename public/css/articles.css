@@ -120,6 +120,15 @@
     border: 1px solid var(--neutral-200);
 }
 
+.article__editor {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
 .article__header {
     display: flex;
     flex-direction: row;
@@ -171,7 +180,7 @@
 }
 
 .article__likes {
-    color: var(--red-400);
+    color: var(--red-500);
 }
 
 .article__title {

@@ -30,6 +30,7 @@ exports.getBusiness = async (req, res, next) => renderArticles(req, res, next, '
 exports.getTechnology = async (req, res, next) => renderArticles(req, res, next, '/news/technology', 'Technology');
 exports.getLifestyle = async (req, res, next) => renderArticles(req, res, next, '/news/lifestyle', 'Lifestyle');
 
+// Helper functions
 const renderArticles = async (req, res, next, path, category) => {
     try {
         // const articles = await Article.find({category: category}).sort({_id: -1});
@@ -58,6 +59,8 @@ const renderArticle = async (req, res, next, article, user, path, category) => {
         // let articleId = req.params.articleId;
         // const article = await Article.find({category: category, _id: articleId})[0];
 
+        const isEdit = true;
+
         res.render('article', {
             // title: article.title,
             title: article.title + ' | BayBank - the best solution for both individuals and companies',
@@ -65,6 +68,7 @@ const renderArticle = async (req, res, next, article, user, path, category) => {
             active: category,
             article: article,
             author: user,
+            edit: isEdit,
         });
     } catch (error) {
         res.render('404', {
@@ -74,8 +78,3 @@ const renderArticle = async (req, res, next, article, user, path, category) => {
         });
     }
 };
-
-// Future functions:
-// const getArticles = () => {}
-// const getArticle = () => {}
-// const renderError = () => {}

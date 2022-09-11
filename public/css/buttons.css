@@ -14,6 +14,11 @@
     padding: 0.5rem 1rem;
 }
 
+.button--tiny {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+}
+
 .button--large {
     font-size: 1.1rem;
     font-weight: 600;
@@ -23,6 +28,26 @@
 .button:active,
 .button:focus {
     background-color: var(--blue-400);
+}
+
+.button--orange {
+    background-color: var(--orange-500);
+}
+
+.button--orange:hover,
+.button--orange:active,
+.button--orange:focus {
+    background-color: var(--orange-400);
+}
+
+.button--red {
+    background-color: var(--red-500);
+}
+
+.button--red:hover,
+.button--red:active,
+.button--red:focus {
+    background-color: var(--red-400);
 }
 
 .button--transparent {
@@ -57,7 +82,7 @@
 
 .button.button--liked {
     background-color: transparent;
-    color: var(--red-400);
+    color: var(--red-500);
     font-weight: 500;
     font-size: 1rem;
     outline: none;
@@ -65,12 +90,12 @@
 
 .button.button--liked:hover,
 .button.button--liked:active {
-    color: var(--red-400);
+    color: var(--red-500);
     background-color: transparent;
     outline: none;
 }
 
 .button.button--liked:focus {
-    background-color: var(--red-50);
+    background-color: var(--red-100);
     outline: none;
 }

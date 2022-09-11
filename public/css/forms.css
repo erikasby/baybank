@@ -38,6 +38,10 @@
     border-radius: 0.5rem;
 }
 
+.form span {
+    min-height: 8rem;
+}
+
 .form__input:focus {
     outline: 2px solid var(--blue-500);
 }
@@ -47,12 +51,12 @@
 }
 
 .form__input--invalid {
-    outline: 2px solid var(--red-400);
-    background-color: var(--red-50);
+    outline: 2px solid var(--red-500);
+    background-color: var(--red-100);
 }
 
 .form__input--invalid::placeholder {
-    color: var(--red-200);
+    color: var(--red-300);
 }
 
 .form__additional-link {

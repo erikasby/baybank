@@ -3,42 +3,57 @@
     <head>
         <%- include('includes/head.ejs') %>
         <link rel="stylesheet" href="/css/forms.css" />
-        <link rel="stylesheet" href="/css/register.css" />
+        <link rel="stylesheet" href="/css/article-form.css" />
         <script src="/js/validation.js" defer></script>
+        <script src="/js/textarea-autoresize.js" defer></script>
         <title><%= title %></title>
     </head>
     <body>
         <%- include('includes/header.ejs', {active: active}) %>
         <main class="main">
-            <section class="register">
-                <form class="form" action="/register" method="POST" novalidate>
+            <section class="article-form">
+                <form class="form" action="/news/new" method="POST" novalidate>
                     <label class="form__label" for="title">Title</label>
                     <p class="form__error"></p>
-                    <textarea
+                    <input
                         type="text"
                         id="title"
                         name="title"
                         class="form__input"
-                        minlength="1"
-                        maxlength="10"
-                        pattern="[A-Za-z0-9]{1,10}"
                         required
                     >
-                    </textarea>
+                    </input>
                     <label class="form__label" for="secondary-title">Secondary title</label>
                     <p class="form__error"></p>
-                    <textarea
+                    <input
                         type="text"
                         id="secondary-title"
                         name="secondary-title"
                         class="form__input"
-                        minlength="1"
-                        maxlength="20"
-                        pattern="[A-Za-z0-9]{1,20}"
                         required
                     >
-                    </textarea>
-                    <button type="submit" class="button button--small">Register</button>
+                    </input>
+                    <label class="form__label" for="image-link">Image link</label>
+                    <p class="form__error"></p>
+                    <input
+                        type="text"
+                        id="image-link"
+                        name="image-link"
+                        class="form__input"
+                        required
+                    >
+                    </input>
+                    <label class="form__label" for="article-content">Article content</label>
+                    <p class="form__error"></p>
+                    <textarea
+                        id="article-content"
+                        name="article-content"
+                        class="form__input"
+                        required
+                        contenteditable
+                        style="resize: none; overflow: hidden; min-height: 8rem; height: max-content;"
+                    ></textarea>
+                    <button type="submit" class="button button--small">Create</button>
                 </form>
             </section>
         </main>

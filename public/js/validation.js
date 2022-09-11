@@ -1,35 +1,93 @@
 'use strict';
 
+// This file is for client-side validation of:
+// creating/editing articles,
+// login page,
+// register page
+
 const form = document.querySelector('.form');
+const login = document.querySelector('.login');
 const register = document.querySelector('.register');
+const articleForm = document.querySelector('.article-form');
 
 // Error labels
-const usernameError = document.getElementById('username').previousElementSibling;
-const passwordError = document.getElementById('password').previousElementSibling;
 let emailError,
-    repeatPasswordError = null;
+    usernameError,
+    passwordError,
+    repeatPasswordError,
+    titleError,
+    secondaryTitleError,
+    imageLinkError,
+    articleContentError = null;
+
+if (login) {
+    usernameError = document.getElementById('username').previousElementSibling;
+    passwordError = document.getElementById('password').previousElementSibling;
+}
+
 if (register) {
     emailError = document.getElementById('email').previousElementSibling;
+    usernameError = document.getElementById('username').previousElementSibling;
+    passwordError = document.getElementById('password').previousElementSibling;
     repeatPasswordError = document.getElementById('repeat-password').previousElementSibling;
 }
 
+if (articleForm) {
+    titleError = document.getElementById('title').previousElementSibling;
+    secondaryTitleError = document.getElementById('secondary-title').previousElementSibling;
+    imageLinkError = document.getElementById('image-link').previousElementSibling;
+    articleContentError = document.getElementById('article-content').previousElementSibling;
+}
+
 // Inputs
-const username = document.getElementById('username');
-const password = document.getElementById('password');
 let email,
-    repeatPassword = null;
+    username,
+    password,
+    repeatPassword,
+    title,
+    secondaryTitle,
+    imageLink,
+    articleContent = null;
+
+if (login) {
+    username = document.getElementById('username');
+    password = document.getElementById('password');
+}
+
 if (register) {
     email = document.getElementById('email');
+    username = document.getElementById('username');
+    password = document.getElementById('password');
     repeatPassword = document.getElementById('repeat-password');
+}
+
+if (articleForm) {
+    title = document.getElementById('title');
+    secondaryTitle = document.getElementById('secondary-title');
+    imageLink = document.getElementById('image-link');
+    articleContent = document.getElementById('article-content');
 }
 
 // Event listeners
 form.addEventListener('submit', (event) => validate(event));
-username.addEventListener('focus', (event) => elementToDefaultStyling(username, usernameError));
-password.addEventListener('focus', (event) => elementToDefaultStyling(password, passwordError));
+
+if (login) {
+    username.addEventListener('focus', (event) => elementToDefaultStyling(username, usernameError));
+    password.addEventListener('focus', (event) => elementToDefaultStyling(password, passwordError));
+}
+
 if (register) {
     email.addEventListener('focus', (event) => elementToDefaultStyling(email, emailError));
+    username.addEventListener('focus', (event) => elementToDefaultStyling(username, usernameError));
+    password.addEventListener('focus', (event) => elementToDefaultStyling(password, passwordError));
     repeatPassword.addEventListener('focus', (event) => elementToDefaultStyling(repeatPassword, repeatPasswordError));
+}
+
+if (articleForm) {
+    title.addEventListener('focus', (event) => elementToDefaultStyling(title, titleError));
+    secondaryTitle.addEventListener('focus', (event) => elementToDefaultStyling(secondaryTitle, secondaryTitleError));
+    imageLink.addEventListener('focus', (event) => elementToDefaultStyling(imageLink, imageLinkError));
+    articleContent.addEventListener('focus', (event) => elementToDefaultStyling(articleContent, articleContentError));
 }
 
 // Helpers
@@ -46,23 +104,43 @@ const elementToDefaultStyling = (element, elementError) => {
     element.classList.remove('form__input--invalid');
 };
 
-// Validation (order of if statements in validate() function is important for the UI)
+// Validation
 const validate = (event) => {
     let validated = true;
+
+    if (login) {
+        validated = validateUsername(event);
+        if (!validated) return;
+
+        validated = validatePassword(event);
+        if (!validated) return;
+    }
 
     if (register) {
         validated = validateEmail(event);
         if (!validated) return;
+
+        validated = validateUsername(event);
+        if (!validated) return;
+
+        validated = validatePassword(event);
+        if (!validated) return;
+
+        validated = validateRepeatPassword(event);
+        if (!validated) return;
     }
 
-    validated = validateUsername(event);
-    if (!validated) return;
+    if (articleForm) {
+        validated = validateTitle(event);
+        if (!validated) return;
 
-    validated = validatePassword(event);
-    if (!validated) return;
+        validated = validateSecondaryTitle(event);
+        if (!validated) return;
 
-    if (register) {
-        validated = validateRepeatPassword(event);
+        validated = validateImageLink(event);
+        if (!validated) return;
+
+        validated = validateArticleContent(event);
         if (!validated) return;
     }
 };
@@ -162,6 +240,46 @@ const validateRepeatPassword = (event) => {
         const errorTextContent = `Passwords do not match`;
         showError(password, passwordError, errorTextContent, event);
         showError(repeatPassword, repeatPasswordError, errorTextContent, event);
+        return;
+    }
+
+    return true;
+};
+
+const validateTitle = (event) => {
+    if (title.value.length < 10) {
+        const errorTextContent = `Title should atleast be 10 characters long; you entered ${title.value.length}`;
+        showError(title, titleError, errorTextContent, event);
+        return;
+    }
+
+    return true;
+};
+
+const validateSecondaryTitle = (event) => {
+    if (secondaryTitle.value.length < 10) {
+        const errorTextContent = `Secondary title should atleast be 10 characters long; you entered ${secondaryTitle.value.length}`;
+        showError(secondaryTitle, secondaryTitleError, errorTextContent, event);
+        return;
+    }
+
+    return true;
+};
+
+const validateImageLink = (event) => {
+    if (imageLink.value.length < 10 && imageLink.value.contains('http') === false) {
+        const errorTextContent = `Please, enter a valid image url`;
+        showError(imageLink, imageLinkError, errorTextContent, event);
+        return;
+    }
+
+    return true;
+};
+
+const validateArticleContent = (event) => {
+    if (articleContent.innerText.length < 10) {
+        const errorTextContent = `Article content should atleast be 50 characters long; you entered ${articleContent.value.length}`;
+        showError(articleContent, articleContentError, errorTextContent, event);
         return;
     }
 

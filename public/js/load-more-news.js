@@ -2,19 +2,15 @@
 
 const button = document.querySelector('.load-more');
 const articles = document.querySelector('.articles__articles');
-// This variable holds ID of the last article on the page, it is needed for fetching next 9 articles
-const lastArticleId = getClassNameFromHtmlElement(button, 'doc-');
-const url = `/api/load-more-news?doc=${lastArticleId}`;
 
-// fetch(url)
-//     .then((res) => res.text())
-//     .then((data) => console.log(data))
-//     .catch((error) => console.error(error));
+button.addEventListener('click', () => loadMoreNews());
 
-button.addEventListener('click', () => loadMoreNews(url));
-
-async function loadMoreNews(url) {
+async function loadMoreNews() {
     try {
+        // This variable holds ID of the last article on the page, it is needed for fetching next 9 articles
+        const lastArticleId = getClassNameFromButtont(button, 'doc-');
+        const url = `/api/load-more-news?doc=${lastArticleId}`;
+
         const res = await fetch(url);
         const data = await res.json();
 
@@ -24,8 +20,8 @@ async function loadMoreNews(url) {
     }
 }
 
-function getClassNameFromHtmlElement(element, className) {
-    return element.classList.value
+function getClassNameFromButtont(button, className) {
+    return button.classList.value
         .split(' ')
         .filter((word) => word.includes(className))[0]
         .split('-')[1];
