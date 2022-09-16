@@ -13,6 +13,7 @@ const router = express.Router();
 router.get('/', mainController.getIndex);
 router.get('/login', mainController.getLogin);
 router.get('/register', mainController.getRegister);
+router.post('/register', mainController.postRegister);
 
 // Article main routes
 router.get('/news/press', articleController.getPress);

@@ -57,7 +57,6 @@ const userSchema = new mongoose.Schema({
     },
     lastLogin: {
         type: Date,
-        required: true,
     },
 });
 

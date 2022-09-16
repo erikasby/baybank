@@ -1,10 +1,10 @@
 <% for (let i = 0; i < 9; i++) { %>
 <article class="articles__article">
     <div class="article__header">
-        <img class="article__pictureLink" src="<%= author.pictureLink %>" alt="Profile picture" />
+        <img class="article__pictureLink" src="<%= article.author.pictureLink %>" alt="Profile picture" />
         <div class="article__data">
             <div class="article__split">
-                <p class="article__username"><%= author.username %></p>
+                <p class="article__username"><%= article.author.username %></p>
                 <div class="article__watches"><i class="fa-solid fa-eye"></i> <%= article.watchCount %></div>
                 <div class="article__likes"><i class="fa-solid fa-heart"></i> <%= article.likesCount%></div>
             </div>
