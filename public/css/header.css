@@ -42,12 +42,15 @@
 
 .nav__link,
 .user__login,
+.user__logout,
 .user__register,
 .header__hamburger {
     display: block;
     color: var(--neutral-950);
     font-weight: 400;
     transition: color 0.2s;
+    border: none;
+    cursor: pointer;
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
     border-radius: 0.5rem;
@@ -68,6 +71,9 @@
 .nav__link:hover,
 .nav__link:active,
 .nav__link:focus,
+.user__logout:hover,
+.user__logout:active,
+.user__logout:focus,
 .user__login:hover,
 .user__login:active,
 .user__login:focus,
@@ -116,6 +122,7 @@
     .nav__links,
     .user,
     .nav__link,
+    .user__logout,
     .user__login,
     .user__register {
         max-width: 100%;
@@ -135,6 +142,7 @@
     .nav__links:first-child > li:first-child > .nav__link,
     .nav__link,
     .user__login,
+    .user__logout,
     .user__register {
         border-bottom: 1px solid var(--neutral-100);
         border-radius: 0;
@@ -147,7 +155,8 @@
         margin-bottom: 0.5rem;
     }
 
-    .user__register {
+    .user__register,
+    .user__logout {
         border-bottom: 0;
     }
 }

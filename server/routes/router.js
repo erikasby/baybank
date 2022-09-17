@@ -6,14 +6,18 @@ const mainController = require('../controllers/mainController');
 const articleController = require('../controllers/articles/articleController');
 const articleAdminController = require('../controllers/articles/articleAdminController');
 const articleHelpers = require('../controllers/articles/articleHelpers');
+const authController = require('../controllers/authController');
 
 const router = express.Router();
 
-// Main routes
 router.get('/', mainController.getIndex);
-router.get('/login', mainController.getLogin);
-router.get('/register', mainController.getRegister);
-router.post('/register', mainController.postRegister);
+
+// Auth routes
+router.get('/login', authController.getLogin);
+router.post('/login', authController.postLogin);
+router.get('/register', authController.getRegister);
+router.post('/register', authController.postRegister);
+router.post('/logout', authController.postLogout);
 
 // Article main routes
 router.get('/news/press', articleController.getPress);

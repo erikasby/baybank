@@ -66,6 +66,7 @@
                         pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{6,30}$"
                         required
                     />
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
                     <button type="submit" class="button button--small">Register</button>
                 </form>
                 <a href="/login" class="form__additional-link form__additional-link--register"

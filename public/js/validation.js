@@ -29,7 +29,7 @@ if (register) {
     emailError = document.getElementById('email').previousElementSibling;
     usernameError = document.getElementById('username').previousElementSibling;
     passwordError = document.getElementById('password').previousElementSibling;
-    repeatPasswordError = document.getElementById('repeat-password').previousElementSibling;
+    repeatPasswordError = document.getElementById('repeatPassword').previousElementSibling;
 }
 
 if (articleForm) {
@@ -58,7 +58,7 @@ if (register) {
     email = document.getElementById('email');
     username = document.getElementById('username');
     password = document.getElementById('password');
-    repeatPassword = document.getElementById('repeat-password');
+    repeatPassword = document.getElementById('repeatPassword');
 }
 
 if (articleForm) {

@@ -1,8 +1,5 @@
 'use strict';
 
-const User = require('../models/User');
-const bcrypt = require('bcrypt');
-
 const headings = [
     'Control your environment',
     'Stable high performance',
@@ -31,117 +28,14 @@ exports.getIndex = async (req, res, next) => {
             path: '/',
             active: 'Home',
             cards: cards,
+            isLoggedIn: req.session.isLoggedIn,
         });
     } catch (error) {
         res.render('404', {
             title: '404',
             path: '/404',
             active: '',
+            isLoggedIn: req.session.isLoggedIn,
         });
     }
 };
-
-exports.getLogin = async (req, res, next) => {
-    try {
-        res.render('login', {
-            title: 'Login' + ' | BayBank - the best solution for both individuals and companies',
-            path: '/login',
-            active: 'Login',
-        });
-    } catch (error) {
-        res.render('404', {
-            title: '404' + ' | BayBank - the best solution for both individuals and companies',
-            path: '/404',
-            active: '',
-        });
-    }
-};
-
-exports.getRegister = async (req, res, next) => {
-    try {
-        res.render('register', {
-            title: 'Register',
-            path: '/register',
-            active: 'Register',
-        });
-    } catch (error) {
-        res.render('404', {
-            title: '404',
-            path: '/404',
-            active: '',
-        });
-    }
-};
-
-exports.postRegister = async (req, res, next) => {
-    try {
-        const email = req.body.email;
-        const username = req.body.username;
-        const password = req.body.password;
-        const repeatedPassword = req.body.repeatedPassword;
-
-        const validated = function () {
-            const isValidatedEmail = validateEmail();
-            const isValidatedUsername = validateUsername();
-            const isValidatedPassword = validatePassword();
-            const isValidatedRepeatedPassword = password === repeatedPassword;
-
-            if (isValidatedEmail && isValidatedUsername && isValidatedPassword && isValidatedRepeatedPassword) {
-                return true;
-            } else {
-                return false;
-            }
-        };
-
-        if (validated) {
-            const currentDate = new Date().toUTCString();
-            const hashedPassword = await bcrypt.hash(password, 10);
-
-            const isUser = await User.findOne({email: email, username: username});
-
-            if (!isUser) {
-                const user = await User.create({
-                    email: email,
-                    username: username,
-                    password: hashedPassword,
-                    role: 'basic',
-                    createdAt: currentDate,
-                    updatedAt: currentDate,
-                });
-
-                res.redirect('/login');
-            } else {
-                res.redirect('/register');
-            }
-        } else {
-            res.redirect('/register');
-        }
-    } catch (error) {
-        console.log(error);
-
-        res.render('404', {
-            title: '404',
-            path: '/404',
-            active: '',
-        });
-    }
-};
-
-// Helpers
-function validateEmail(email) {
-    const regex = new RegExp('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$');
-
-    return regex.test(email);
-}
-
-function validateUsername(username) {
-    const regex = new RegExp('[A-Za-z0-9]{3,20}');
-
-    return regex.test(username);
-}
-
-function validatePassword(password) {
-    const regex = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{6,30}$');
-
-    return regex.test(password);
-}

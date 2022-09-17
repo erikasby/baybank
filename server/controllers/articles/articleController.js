@@ -37,8 +37,6 @@ const renderArticles = async (req, res, next, path, category) => {
 
         const lastArticle = article;
 
-        console.log(article);
-
         res.render('articles', {
             title: category + ' | BayBank - the best solution for both individuals and companies',
             path: path,
@@ -46,12 +44,14 @@ const renderArticles = async (req, res, next, path, category) => {
             author: user,
             article: article,
             lastArticle: lastArticle,
+            isLoggedIn: req.session.isLoggedIn,
         });
     } catch (error) {
         res.render('404', {
             title: '404',
             path: '/404',
             active: '',
+            isLoggedIn: req.session.isLoggedIn,
         });
     }
 };
@@ -71,12 +71,14 @@ const renderArticle = async (req, res, next, article, user, path, category) => {
             article: article,
             author: user,
             edit: isEdit,
+            isLoggedIn: req.session.isLoggedIn,
         });
     } catch (error) {
         res.render('404', {
             title: '404',
             path: '/404',
             active: '',
+            isLoggedIn: req.session.isLoggedIn,
         });
     }
 };

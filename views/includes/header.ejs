@@ -15,8 +15,15 @@
         </nav>
         <div class="header__hamburger">☰</div>
         <div class="user">
-            <a href="/login" class="user__login <%= active === "Login" ? "active" : "" %>">Login</a>
-            <a href="/register" class="user__register <%= active === "Register" ? "active" : "" %>">Register</a>
+            <% if (!isLoggedIn) { %> 
+                <a href="/login" class="user__login <%= active === "Login" ? "active" : "" %>">Login</a>
+                <a href="/register" class="user__register <%= active === "Register" ? "active" : "" %>">Register</a>
+            <% } else { %>
+                <form action="/logout" method="POST">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <button type="submit" class="user__logout">Logout</button>
+                </form>
+            <% } %> 
         </div>
     </div>
 </header>
