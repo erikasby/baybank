@@ -47,7 +47,7 @@ app.use(async (req, res, next) => {
 });
 
 app.use((req, res, next) => {
-    res.locals.isAuthenticated = req.session.isLoggedIn;
+    res.locals.isLoggedIn = req.session.isLoggedIn;
     res.locals.csrfToken = req.csrfToken();
     next();
 });
@@ -59,7 +59,6 @@ app.use((req, res, next) => {
         title: '404',
         path: '/404',
         active: '',
-        isLoggedIn: req.session.isLoggedIn,
     });
 });
 

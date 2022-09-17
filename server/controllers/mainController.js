@@ -28,14 +28,12 @@ exports.getIndex = async (req, res, next) => {
             path: '/',
             active: 'Home',
             cards: cards,
-            isLoggedIn: req.session.isLoggedIn,
         });
     } catch (error) {
         res.render('404', {
             title: '404',
             path: '/404',
             active: '',
-            isLoggedIn: req.session.isLoggedIn,
         });
     }
 };

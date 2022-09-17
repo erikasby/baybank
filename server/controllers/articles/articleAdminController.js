@@ -13,14 +13,12 @@ exports.postCreateArticle = async (req, res, next) => {
             path: path,
             active: category,
             article: 'lifestyleArticles',
-            isLoggedIn: req.session.isLoggedIn,
         });
     } catch (error) {
         res.render('404', {
             title: '404',
             path: '/404',
             active: '',
-            isLoggedIn: req.session.isLoggedIn,
         });
     }
 };
@@ -34,14 +32,12 @@ exports.getEditArticle = async (req, res, next) => {
             path: path,
             active: category,
             article: 'lifestyleArticles',
-            isLoggedIn: req.session.isLoggedIn,
         });
     } catch (error) {
         res.render('404', {
             title: '404',
             path: '/404',
             active: '',
-            isLoggedIn: req.session.isLoggedIn,
         });
     }
 };
@@ -55,14 +51,12 @@ exports.postEditArticle = async (req, res, next) => {
             path: path,
             active: category,
             article: 'lifestyleArticles',
-            isLoggedIn: req.session.isLoggedIn,
         });
     } catch (error) {
         res.render('404', {
             title: '404',
             path: '/404',
             active: '',
-            isLoggedIn: req.session.isLoggedIn,
         });
     }
 };
@@ -76,14 +70,12 @@ const renderCreateArticle = async (req, res, next, path) => {
             title: 'New article' + ' | BayBank - the best solution for both individuals and companies',
             path: path,
             active: 'New article',
-            isLoggedIn: req.session.isLoggedIn,
         });
     } catch (error) {
         res.render('404', {
             title: '404',
             path: '/404',
             active: '',
-            isLoggedIn: req.session.isLoggedIn,
         });
     }
 };
@@ -101,14 +93,12 @@ const renderEditArticle = async (req, res, next, path) => {
             author: user,
             article: article,
             lastArticle: lastArticle,
-            isLoggedIn: req.session.isLoggedIn,
         });
     } catch (error) {
         res.render('404', {
             title: '404',
             path: '/404',
             active: '',
-            isLoggedIn: req.session.isLoggedIn,
         });
     }
 };

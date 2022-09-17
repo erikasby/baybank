@@ -11,7 +11,6 @@ exports.getLogin = async (req, res, next) => {
                 title: 'Login' + ' | BayBank - the best solution for both individuals and companies',
                 path: '/login',
                 active: 'Login',
-                isLoggedIn: req.session.isLoggedIn,
             });
         }
     } catch (error) {
@@ -19,7 +18,6 @@ exports.getLogin = async (req, res, next) => {
             title: '404' + ' | BayBank - the best solution for both individuals and companies',
             path: '/404',
             active: '',
-            isLoggedIn: req.session.isLoggedIn,
         });
     }
 };
@@ -32,7 +30,6 @@ exports.getRegister = async (req, res, next) => {
                 title: 'Register',
                 path: '/register',
                 active: 'Register',
-                isLoggedIn: req.session.isLoggedIn,
             });
         }
     } catch (error) {
@@ -40,7 +37,6 @@ exports.getRegister = async (req, res, next) => {
             title: '404',
             path: '/404',
             active: '',
-            isLoggedIn: req.session.isLoggedIn,
         });
     }
 };
@@ -78,7 +74,6 @@ exports.postLogin = async (req, res, next) => {
             title: '404',
             path: '/404',
             active: '',
-            isLoggedIn: req.session.isLoggedIn,
         });
     }
 };
@@ -120,7 +115,6 @@ exports.postRegister = async (req, res, next) => {
             title: '404',
             path: '/404',
             active: '',
-            isLoggedIn: req.session.isLoggedIn,
         });
     }
 };
