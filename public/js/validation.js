@@ -17,6 +17,8 @@ let emailError,
     repeatPasswordError,
     titleError,
     secondaryTitleError,
+    categoryError,
+    subCategoryError,
     imageLinkError,
     articleContentError = null;
 
@@ -35,8 +37,10 @@ if (register) {
 if (articleForm) {
     titleError = document.getElementById('title').previousElementSibling;
     secondaryTitleError = document.getElementById('secondary-title').previousElementSibling;
-    imageLinkError = document.getElementById('image-link').previousElementSibling;
-    articleContentError = document.getElementById('article-content').previousElementSibling;
+    categoryError = document.getElementById('categoryError').previousElementSibling;
+    subCategoryError = document.getElementById('subCategoryError').previousElementSibling;
+    imageLinkError = document.getElementById('imageLink').previousElementSibling;
+    articleContentError = document.getElementById('articleContent').previousElementSibling;
 }
 
 // Inputs
@@ -46,6 +50,8 @@ let email,
     repeatPassword,
     title,
     secondaryTitle,
+    category,
+    subCategory,
     imageLink,
     articleContent = null;
 
@@ -63,9 +69,11 @@ if (register) {
 
 if (articleForm) {
     title = document.getElementById('title');
-    secondaryTitle = document.getElementById('secondary-title');
-    imageLink = document.getElementById('image-link');
-    articleContent = document.getElementById('article-content');
+    secondaryTitle = document.getElementById('secondaryTitle');
+    category = document.getElementById('category');
+    subCategory = document.getElementById('subCategory');
+    imageLink = document.getElementById('imageLink');
+    articleContent = document.getElementById('articleContent');
 }
 
 // Event listeners
@@ -86,6 +94,8 @@ if (register) {
 if (articleForm) {
     title.addEventListener('focus', (event) => elementToDefaultStyling(title, titleError));
     secondaryTitle.addEventListener('focus', (event) => elementToDefaultStyling(secondaryTitle, secondaryTitleError));
+    category.addEventListener('focus', (event) => elementToDefaultStyling(category, categoryError));
+    subCategory.addEventListener('focus', (event) => elementToDefaultStyling(subCategory, subCategoryError));
     imageLink.addEventListener('focus', (event) => elementToDefaultStyling(imageLink, imageLinkError));
     articleContent.addEventListener('focus', (event) => elementToDefaultStyling(articleContent, articleContentError));
 }
@@ -135,6 +145,12 @@ const validate = (event) => {
         if (!validated) return;
 
         validated = validateSecondaryTitle(event);
+        if (!validated) return;
+
+        validated = validateCategory(event);
+        if (!validated) return;
+
+        validated = validateSubCategory(event);
         if (!validated) return;
 
         validated = validateImageLink(event);
@@ -280,6 +296,28 @@ const validateArticleContent = (event) => {
     if (articleContent.innerText.length < 10) {
         const errorTextContent = `Article content should atleast be 50 characters long; you entered ${articleContent.value.length}`;
         showError(articleContent, articleContentError, errorTextContent, event);
+        return;
+    }
+
+    return true;
+};
+
+const validateCategory = (event) => {
+    const categories = ['Technology', 'Business', 'Press', 'Lifestyle'];
+
+    for (cat in categories) {
+        if (category.value === cat) return true;
+    }
+
+    const errorTextContent = `Please, enter an existing category`;
+    showError(category, categoryError, errorTextContent, event);
+    return;
+};
+
+const validateSubCategory = (event) => {
+    if (subCategory.value.length > 3) {
+        const errorTextContent = `Subcategory should atleast be 3 characters long; you entered ${subCategory.value.length}`;
+        showError(subCategory, subCategoryError, errorTextContent, event);
         return;
     }
 

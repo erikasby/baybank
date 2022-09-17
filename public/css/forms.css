@@ -79,6 +79,7 @@ body {
 .footer {
     background-color: var(--neutral-100);
     border-top: none;
+    margin-top: 0;
 }
 
 .footer__container {

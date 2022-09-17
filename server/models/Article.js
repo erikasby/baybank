@@ -64,6 +64,6 @@ const articleSchema = new mongoose.Schema({
     },
 });
 
-articleSchema.index({title: 'text', content: 'text'});
+articleSchema.index({title: 'text', category: 'text'});
 
 module.exports = mongoose.model('Article', articleSchema);

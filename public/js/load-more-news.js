@@ -8,7 +8,10 @@ button.addEventListener('click', () => loadMoreNews());
 async function loadMoreNews() {
     try {
         // This variable holds ID of the last article on the page, it is needed for fetching next 9 articles
-        const lastArticleId = getClassNameFromButtont(button, 'doc-');
+
+        // db.users.find({'_id'> last_id}). limit(9)
+
+        const lastArticleId = getClassNameFromButton(button, 'doc-');
         const url = `/api/load-more-news?doc=${lastArticleId}`;
 
         const res = await fetch(url);
@@ -20,7 +23,7 @@ async function loadMoreNews() {
     }
 }
 
-function getClassNameFromButtont(button, className) {
+function getClassNameFromButton(button, className) {
     return button.classList.value
         .split(' ')
         .filter((word) => word.includes(className))[0]

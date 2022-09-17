@@ -1,12 +1,9 @@
 'use strict';
 
-const Article = require('../../models/ArticleFake');
-const User = require('../../models/UserFake');
+const Article = require('../../models/Article');
+const User = require('../../models/User');
 
 exports.loadMoreNews = (req, res, next) => {
-    // Use in future to only allow request this from BayBank domain
-    const host = req.headers.host;
-
     const lastArticleId = req.query.doc;
 
     // Fetch articles

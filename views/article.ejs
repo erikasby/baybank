@@ -30,7 +30,13 @@
                     </div>
                     <% } %>
                     <div class="article__header">
-                        <img class="article__pictureLink" src="<%= author.pictureLink %>" alt="Profile picture" />
+                        <% if (article.author.pictureLink) { %>
+                        <img
+                            class="article__pictureLink"
+                            src="<%= article.author.pictureLink %>"
+                            alt="Profile picture"
+                        />
+                        <% } %>
                         <div class="article__data">
                             <div class="article__split">
                                 <p class="article__username"><%= author.username %></p>
@@ -53,7 +59,7 @@
                     <div class="article__content"><%- article.content %></div>
                     <button
                         type="button"
-                        class="button button--small <%= Object.values(article.likedBy).includes(author._id) ? 'button--liked' : 'button--unliked' %> article__likesCount"
+                        class="button button--small <%= Object.values(article.likedBy).includes(article.author._id) ? 'button--liked' : 'button--unliked' %> article__likesCount"
                     >
                         <i class="fa-solid fa-heart"></i> <%= article.likesCount %>
                     </button>

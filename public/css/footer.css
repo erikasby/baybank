@@ -1,6 +1,7 @@
 .footer {
     background-color: var(--neutral-50);
     border-top: 1px solid var(--neutral-200);
+    margin-top: auto;
 }
 
 .footer__container {
