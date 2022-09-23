@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 const articleSchema = new mongoose.Schema({
     author: {
-        type: mongoose.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'users',
         required: true,
     },
     title: {

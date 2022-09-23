@@ -36,9 +36,9 @@ if (register) {
 
 if (articleForm) {
     titleError = document.getElementById('title').previousElementSibling;
-    secondaryTitleError = document.getElementById('secondary-title').previousElementSibling;
-    categoryError = document.getElementById('categoryError').previousElementSibling;
-    subCategoryError = document.getElementById('subCategoryError').previousElementSibling;
+    secondaryTitleError = document.getElementById('secondaryTitle').previousElementSibling;
+    categoryError = document.getElementById('category').previousElementSibling;
+    subCategoryError = document.getElementById('subCategory').previousElementSibling;
     imageLinkError = document.getElementById('imageLink').previousElementSibling;
     articleContentError = document.getElementById('articleContent').previousElementSibling;
 }
@@ -69,6 +69,7 @@ if (register) {
 
 if (articleForm) {
     title = document.getElementById('title');
+    console.log(title);
     secondaryTitle = document.getElementById('secondaryTitle');
     category = document.getElementById('category');
     subCategory = document.getElementById('subCategory');
@@ -282,8 +283,34 @@ const validateSecondaryTitle = (event) => {
     return true;
 };
 
+const validateCategory = (event) => {
+    // If this array is getting changed, then it should be also changed on the backend validation
+    const categories = ['Technology', 'Business', 'Press', 'Lifestyle'];
+
+    for (const cat of categories) {
+        if (category.value === cat) {
+            console.log(category.value, cat);
+            return true;
+        }
+    }
+
+    const errorTextContent = `Please, enter an existing category`;
+    showError(category, categoryError, errorTextContent, event);
+    return;
+};
+
+const validateSubCategory = (event) => {
+    if (subCategory.value.length < 3) {
+        const errorTextContent = `Subcategory should atleast be 3 characters long; you entered ${subCategory.value.length}`;
+        showError(subCategory, subCategoryError, errorTextContent, event);
+        return;
+    }
+
+    return true;
+};
+
 const validateImageLink = (event) => {
-    if (imageLink.value.length < 10 && imageLink.value.contains('http') === false) {
+    if (imageLink.value.length < 10 || imageLink.value.includes('http') === false) {
         const errorTextContent = `Please, enter a valid image url`;
         showError(imageLink, imageLinkError, errorTextContent, event);
         return;
@@ -293,31 +320,9 @@ const validateImageLink = (event) => {
 };
 
 const validateArticleContent = (event) => {
-    if (articleContent.innerText.length < 10) {
+    if (articleContent.value.length < 50) {
         const errorTextContent = `Article content should atleast be 50 characters long; you entered ${articleContent.value.length}`;
         showError(articleContent, articleContentError, errorTextContent, event);
-        return;
-    }
-
-    return true;
-};
-
-const validateCategory = (event) => {
-    const categories = ['Technology', 'Business', 'Press', 'Lifestyle'];
-
-    for (cat in categories) {
-        if (category.value === cat) return true;
-    }
-
-    const errorTextContent = `Please, enter an existing category`;
-    showError(category, categoryError, errorTextContent, event);
-    return;
-};
-
-const validateSubCategory = (event) => {
-    if (subCategory.value.length > 3) {
-        const errorTextContent = `Subcategory should atleast be 3 characters long; you entered ${subCategory.value.length}`;
-        showError(subCategory, subCategoryError, errorTextContent, event);
         return;
     }
 

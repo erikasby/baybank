@@ -223,7 +223,7 @@
 }
 
 .article__likesCount {
-    align-self: start;
+    align-self: center;
 }
 
 .article__content > * {
@@ -242,7 +242,7 @@
 }
 
 .article__content > h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 700;
 }
 
@@ -272,7 +272,7 @@
     }
 
     .article__content > h1 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
 
     .article__content > h2 {

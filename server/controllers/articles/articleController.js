@@ -3,11 +3,6 @@
 const Article = require('../../models/Article');
 const User = require('../../models/User');
 
-const {parseAndSanitizeMarkdownToHTML} = require('../../helpers');
-
-// article.content = parseAndSanitizeMarkdownToHTML(article.content);
-// article.updatedAt = new Date(article.updatedAt).toDateString();
-
 // GET Article
 exports.getPressArticle = async (req, res, next) => renderArticle(req, res, next, '/news/press', 'Press');
 exports.getBusinessArticle = async (req, res, next) => renderArticle(req, res, next, '/news/business', 'Business');
@@ -24,7 +19,15 @@ exports.getLifestyle = async (req, res, next) => renderArticles(req, res, next, 
 // Helper functions
 const renderArticles = async (req, res, next, path, category) => {
     try {
-        const articles = await Article.find({category: category}).populate('author').limit(9);
+        const articles = await Article.find({category: category})
+            .populate({
+                path: 'author',
+                model: 'User',
+            })
+            .limit(9)
+            .exec();
+
+        console.log(articles);
 
         res.render('articles', {
             title: category + ' | BayBank - the best solution for both individuals and companies',
@@ -33,6 +36,8 @@ const renderArticles = async (req, res, next, path, category) => {
             articles: articles,
         });
     } catch (error) {
+        console.log(error);
+
         res.render('404', {
             title: '404',
             path: '/404',

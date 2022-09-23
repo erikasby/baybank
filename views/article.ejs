@@ -39,7 +39,7 @@
                         <% } %>
                         <div class="article__data">
                             <div class="article__split">
-                                <p class="article__username"><%= author.username %></p>
+                                <p class="article__username"><%= article.author.username %></p>
                                 <div class="article__watches">
                                     <i class="fa-solid fa-eye"></i> <%= article.watchCount %>
                                 </div>
@@ -48,7 +48,7 @@
                                 </div>
                             </div>
                             <div class="article__split">
-                                <p class="article__updatedAt"><%= article.updatedAt %></p>
+                                <p class="article__updatedAt"><%= article.updatedAt.toDateString() %></p>
                                 <p class="article__sub-category"><%= article.subCategory %></p>
                             </div>
                         </div>

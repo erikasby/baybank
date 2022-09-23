@@ -2,8 +2,12 @@
 
 const Article = require('../../models/Article');
 
+const {parseAndSanitizeMarkdownToHTML} = require('../../helpers');
+
 exports.getCreateArticle = async (req, res, next) => {
     try {
+        if (!req.session.isLoggedIn) res.redirect('/');
+
         res.render('article-form', {
             title: 'New article' + ' | BayBank - the best solution for both individuals and companies',
             path: '/news/new',
@@ -21,36 +25,56 @@ exports.getCreateArticle = async (req, res, next) => {
 
 exports.postCreateArticle = async (req, res, next) => {
     try {
+        if (!req.session.isLoggedIn) res.redirect('/');
+
         const title = req.body.title;
         const secondaryTitle = req.body.secondaryTitle;
         const category = req.body.category;
         const subCategory = req.body.subCategory;
         const imageLink = req.body.imageLink;
-        const articleContent = req.body.articleContent;
+        let articleContent = req.body.articleContent;
 
         // Leaving for next time:
         // Create server side validation
         // if validation fails, redirect to same page with previous data filled in
-        const isValidated = validateArticleForm(title, secondaryTitle, imageLink, articleContent);
+        const isValidated = validateArticleForm(
+            title,
+            secondaryTitle,
+            category,
+            subCategory,
+            imageLink,
+            articleContent,
+        );
 
         if (isValidated) {
             const currentDate = new Date().toUTCString();
 
-            const article = Article.create({
-                author: req.session.user._id,
-                title: title,
-                secondaryTitle: secondaryTitle,
-                imageLink: imageLink,
-                content: articleContent,
-                createdAt: currentDate,
-                updatedAt: currentDate,
-            });
+            articleContent = parseAndSanitizeMarkdownToHTML(articleContent);
 
-            res.redirect('/');
+            const article = Article.create(
+                {
+                    author: req.session.user._id,
+                    title: title,
+                    secondaryTitle: secondaryTitle,
+                    category: category,
+                    subCategory: subCategory,
+                    imageLink: imageLink,
+                    content: articleContent,
+                    createdAt: currentDate,
+                    updatedAt: currentDate,
+                },
+                (error, doc) => {
+                    if (error) res.redirect('/');
+
+                    res.redirect(`/news/${doc.category}/${doc._id.toHexString()}`);
+                },
+            );
         } else {
             res.redirect('/news/new');
         }
     } catch (error) {
+        console.log(error);
+
         res.render('404', {
             title: '404',
             path: '/404',
@@ -98,10 +122,11 @@ exports.postEditArticle = async (req, res, next) => {
 };
 
 // Helper functions
-
-function validateArticleForm(title, secondaryTitle, imageLink, articleContent) {
+function validateArticleForm(title, secondaryTitle, category, subCategory, imageLink, articleContent) {
     const isValidatedTitle = validateTitle(title);
     const isValidatedSecondaryTitle = validateSecondaryTitle(secondaryTitle);
+    const isValidatedCategory = validateCategory(category);
+    const isValidatedSubCategory = validateSubCategory(subCategory);
     const isValidatedImageLink = validateImageLink(imageLink);
     const isValidatedArticleContent = validateArticleContent(articleContent);
 
@@ -109,26 +134,43 @@ function validateArticleForm(title, secondaryTitle, imageLink, articleContent) {
     else return false;
 }
 
-const validateTitle = (event) => {
-    if (title.value.length < 10) return false;
+const validateTitle = (title) => {
+    if (title.length < 10) return false;
 
     return true;
 };
 
-const validateSecondaryTitle = (event) => {
-    if (secondaryTitle.value.length < 10) return false;
+const validateSecondaryTitle = (secondaryTitle) => {
+    if (secondaryTitle.length < 10) return false;
 
     return true;
 };
 
-const validateImageLink = (event) => {
-    if (imageLink.value.length < 10 && imageLink.value.contains('http') === false) return false;
+const validateCategory = (category) => {
+    // If this array is getting changed, then it should be also changed on the frontend validation
+    const categories = ['Technology', 'Business', 'Press', 'Lifestyle'];
+
+    for (const cat of categories) {
+        if (category === cat) return true;
+    }
+
+    return;
+};
+
+const validateSubCategory = (subCategory) => {
+    if (subCategory.length < 3) return false;
 
     return true;
 };
 
-const validateArticleContent = (event) => {
-    if (articleContent.innerText.length < 10) return false;
+const validateImageLink = (imageLink) => {
+    if (imageLink.length < 10 || imageLink.includes('http') === false) return false;
+
+    return true;
+};
+
+const validateArticleContent = (articleContent) => {
+    if (articleContent.length < 10) return false;
 
     return true;
 };
