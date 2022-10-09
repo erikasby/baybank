@@ -27,8 +27,6 @@ const renderArticles = async (req, res, next, path, category) => {
             .limit(9)
             .exec();
 
-        console.log(articles);
-
         res.render('articles', {
             title: category + ' | BayBank - the best solution for both individuals and companies',
             path: path,

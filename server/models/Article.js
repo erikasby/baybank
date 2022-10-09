@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const articleSchema = new mongoose.Schema({
     author: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'users',
+        ref: 'User',
         required: true,
     },
     title: {

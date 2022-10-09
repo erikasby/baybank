@@ -12,7 +12,11 @@
         <%- include('includes/header.ejs', {active: active}) %>
         <main class="main">
             <section class="article-form">
+                <% if (isEdit) { %>
+                <form class="form" action="/news/<%= article._id %>/edit" method="POST" novalidate>
+                <% } else { %>
                 <form class="form" action="/news/new" method="POST" novalidate>
+                <% } %> 
                     <label class="form__label" for="title">Title</label>
                     <p class="form__error"></p>
                     <input
@@ -20,6 +24,9 @@
                         id="title"
                         name="title"
                         class="form__input"
+                        <% if(isEdit) { %>
+                        value="<%= article.title %>"
+                        <% } %> 
                         required
                     >
                     </input>
@@ -30,6 +37,9 @@
                         id="secondaryTitle"
                         name="secondaryTitle"
                         class="form__input"
+                        <% if(isEdit) { %>
+                        value="<%= article.secondaryTitle %>"
+                        <% } %> 
                         required
                     >
                     </input>
@@ -40,6 +50,9 @@
                         id="category"
                         name="category"
                         class="form__input"
+                        <% if(isEdit) { %>
+                        value="<%= article.category %>"
+                        <% } %> 
                         required
                     >
                     </input>
@@ -50,6 +63,9 @@
                         id="subCategory"
                         name="subCategory"
                         class="form__input"
+                        <% if(isEdit) { %>
+                        value="<%= article.subCategory %>"
+                        <% } %> 
                         required
                     >
                     </input>
@@ -60,6 +76,9 @@
                         id="imageLink"
                         name="imageLink"
                         class="form__input"
+                        <% if(isEdit) { %>
+                        value="<%= article.imageLink %>"
+                        <% } %> 
                         required
                     >
                     </input>
@@ -72,9 +91,9 @@
                         required
                         contenteditable
                         style="resize: none; overflow: hidden; min-height: 8rem; height: max-content;"
-                    ></textarea>
+                    ><% if(isEdit) { %><%= article.content %><% } %></textarea>
                     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                    <button type="submit" class="button button--small">Create</button>
+                    <button type="submit" class="button button--small"><%= isEdit ? "Update" : "Create" %></button>
                 </form>
             </section>
         </main>

@@ -5,14 +5,11 @@ const bcrypt = require('bcrypt');
 
 exports.getLogin = async (req, res, next) => {
     try {
-        if (req.session.isLoggedIn) res.redirect('/');
-        else {
-            res.render('login', {
-                title: 'Login' + ' | BayBank - the best solution for both individuals and companies',
-                path: '/login',
-                active: 'Login',
-            });
-        }
+        res.render('login', {
+            title: 'Login' + ' | BayBank - the best solution for both individuals and companies',
+            path: '/login',
+            active: 'Login',
+        });
     } catch (error) {
         res.render('404', {
             title: '404' + ' | BayBank - the best solution for both individuals and companies',
@@ -24,14 +21,11 @@ exports.getLogin = async (req, res, next) => {
 
 exports.getRegister = async (req, res, next) => {
     try {
-        if (req.session.isLoggedIn) res.redirect('/');
-        else {
-            res.render('register', {
-                title: 'Register',
-                path: '/register',
-                active: 'Register',
-            });
-        }
+        res.render('register', {
+            title: 'Register',
+            path: '/register',
+            active: 'Register',
+        });
     } catch (error) {
         res.render('404', {
             title: '404',

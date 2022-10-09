@@ -2,16 +2,15 @@
 
 const Article = require('../../models/Article');
 
-const {parseAndSanitizeMarkdownToHTML} = require('../../helpers');
+const {parseAndSanitizeMarkdownToHTML, parseHTMLToMarkdown} = require('../../helpers');
 
 exports.getCreateArticle = async (req, res, next) => {
     try {
-        if (!req.session.isLoggedIn) res.redirect('/');
-
         res.render('article-form', {
             title: 'New article' + ' | BayBank - the best solution for both individuals and companies',
             path: '/news/new',
             active: 'New article',
+            isEdit: false,
         });
     } catch (error) {
         console.log(error);
@@ -25,8 +24,6 @@ exports.getCreateArticle = async (req, res, next) => {
 
 exports.postCreateArticle = async (req, res, next) => {
     try {
-        if (!req.session.isLoggedIn) res.redirect('/');
-
         const title = req.body.title;
         const secondaryTitle = req.body.secondaryTitle;
         const category = req.body.category;
@@ -65,11 +62,13 @@ exports.postCreateArticle = async (req, res, next) => {
                 },
                 (error, doc) => {
                     if (error) res.redirect('/');
-
-                    res.redirect(`/news/${doc.category}/${doc._id.toHexString()}`);
+                    else {
+                        res.redirect(`/news/${doc.category}/${doc._id.toHexString()}`);
+                    }
                 },
             );
         } else {
+            // Add back content to the page
             res.redirect('/news/new');
         }
     } catch (error) {
@@ -85,15 +84,21 @@ exports.postCreateArticle = async (req, res, next) => {
 
 exports.getEditArticle = async (req, res, next) => {
     try {
-        // const lifestyleArticles = await Article.find({category: category}).sort({_id: -1});
+        const id = req.params.id;
+        const article = await Article.findOne({_id: id});
 
-        res.render('articles', {
-            title: category + ' | BayBank - the best solution for both individuals and companies',
-            path: path,
-            active: category,
-            article: 'lifestyleArticles',
+        // Render article content from html as markdown
+        article.content = parseHTMLToMarkdown(article.content);
+
+        res.render('article-form', {
+            title: 'Edit article' + ' | BayBank - the best solution for both individuals and companies',
+            path: `/news/${id}/edit`,
+            active: 'Edit article',
+            isEdit: true,
+            article: article,
         });
     } catch (error) {
+        console.log(error);
         res.render('404', {
             title: '404',
             path: '/404',
@@ -104,14 +109,51 @@ exports.getEditArticle = async (req, res, next) => {
 
 exports.postEditArticle = async (req, res, next) => {
     try {
-        // const lifestyleArticles = await Article.find({category: category}).sort({_id: -1});
+        const id = req.params.id;
 
-        res.render('articles', {
-            title: category + ' | BayBank - the best solution for both individuals and companies',
-            path: path,
-            active: category,
-            article: 'lifestyleArticles',
-        });
+        const title = req.body.title;
+        const secondaryTitle = req.body.secondaryTitle;
+        const category = req.body.category;
+        const subCategory = req.body.subCategory;
+        const imageLink = req.body.imageLink;
+        let articleContent = req.body.articleContent;
+
+        const isValidated = validateArticleForm(
+            title,
+            secondaryTitle,
+            category,
+            subCategory,
+            imageLink,
+            articleContent,
+        );
+
+        if (isValidated) {
+            const currentDate = new Date().toUTCString();
+
+            articleContent = parseAndSanitizeMarkdownToHTML(articleContent);
+
+            Article.findOneAndUpdate(
+                {_id: id},
+                {
+                    title: title,
+                    secondaryTitle: secondaryTitle,
+                    category: category,
+                    subCategory: subCategory,
+                    imageLink: imageLink,
+                    content: articleContent,
+                    updatedAt: currentDate,
+                },
+                (error, doc) => {
+                    if (error) res.redirect('/');
+                    else {
+                        res.redirect(`/news/${doc.category}/${doc._id.toHexString()}`);
+                    }
+                },
+            );
+        } else {
+            // Add back content to the page
+            res.redirect('/news/new');
+        }
     } catch (error) {
         res.render('404', {
             title: '404',

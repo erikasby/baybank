@@ -1,5 +1,7 @@
 'use strict';
 
+const TurndownService = require('turndown');
+
 const marked = require('marked');
 const createDOMPurify = require('dompurify');
 const {JSDOM} = require('jsdom');
@@ -17,6 +19,12 @@ exports.getDateAndTime = (currentDate = new Date()) => {
 exports.parseAndSanitizeMarkdownToHTML = (markdown) => {
     const window = new JSDOM('').window;
     const DOMPurify = createDOMPurify(window);
-    const cleanMarkdown = DOMPurify.sanitize(marked.parse(markdown));
-    return cleanMarkdown;
+    const cleanHTML = DOMPurify.sanitize(marked.parse(markdown));
+    return cleanHTML;
+};
+
+exports.parseHTMLToMarkdown = (html) => {
+    const turndownService = new TurndownService({headingStyle: 'atx'});
+    const markdown = turndownService.turndown(html);
+    return markdown;
 };

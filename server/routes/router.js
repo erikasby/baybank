@@ -8,16 +8,20 @@ const articleAdminController = require('../controllers/articles/articleAdminCont
 const articleHelpers = require('../controllers/articles/articleHelpers');
 const authController = require('../controllers/authController');
 
+const isLoggedIn = require('../middlewares/isLoggedIn');
+const isLoggedOut = require('../middlewares/isLoggedOut');
+const isAdmin = require('../middlewares/isAdmin');
+
 const router = express.Router();
 
 router.get('/', mainController.getIndex);
 
 // Auth routes
-router.get('/login', authController.getLogin);
-router.post('/login', authController.postLogin);
-router.get('/register', authController.getRegister);
-router.post('/register', authController.postRegister);
-router.post('/logout', authController.postLogout);
+router.get('/login', isLoggedIn, authController.getLogin);
+router.post('/login', isLoggedIn, authController.postLogin);
+router.get('/register', isLoggedIn, authController.getRegister);
+router.post('/register', isLoggedIn, authController.postRegister);
+router.post('/logout', isLoggedOut, authController.postLogout);
 
 // Article main routes
 router.get('/news/press', articleController.getPress);
@@ -36,12 +40,12 @@ router.get('/news/lifestyle/:articleId', articleController.getLifestyleArticle);
 // router.post('/news/:articleId/comments/:commentId/:userId', articleController.postArticleCommentByUserId);
 
 // Article admin routes
-router.get('/news/new', articleAdminController.getCreateArticle);
-router.post('/news/new', articleAdminController.postCreateArticle);
-router.get('/news/:id/edit', articleAdminController.getEditArticle);
-router.post('/news/:id/edit', articleAdminController.postEditArticle);
+router.get('/news/new', isLoggedOut, isAdmin, articleAdminController.getCreateArticle);
+router.post('/news/new', isLoggedOut, isAdmin, articleAdminController.postCreateArticle);
+router.get('/news/:id/edit', isLoggedOut, isAdmin, articleAdminController.getEditArticle);
+router.post('/news/:id/edit', isLoggedOut, isAdmin, articleAdminController.postEditArticle);
 
 // APIs
-router.get('/api/load-more-news', articleHelpers.loadMoreNews);
+router.get('/api/load-more-news', isLoggedIn, articleHelpers.loadMoreNews);
 
 module.exports = router;
