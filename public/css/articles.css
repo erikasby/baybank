@@ -53,6 +53,7 @@
     margin-bottom: 1rem;
     margin-top: 1rem;
     border-radius: 0.5rem;
+    background-color: var(--neutral-500);
 }
 
 .articles__article-title {
@@ -162,6 +163,8 @@
     height: 100%;
     object-fit: cover;
     margin-right: 1rem;
+    border-radius: 99rem;
+    background-color: var(--neutral-500);
 }
 
 .article__username {
@@ -214,6 +217,7 @@
     height: 100%;
     object-fit: cover;
     margin-bottom: 2rem;
+    background-color: var(--neutral-500);
 }
 
 .article__title,

@@ -3,6 +3,8 @@
     <div class="article__header">
         <% if (article.author.pictureLink) { %>
         <img class="article__pictureLink" src="<%= article.author.pictureLink %>" alt="Profile picture" />
+        <% } else { %>
+        <div class="article__pictureLink"></div>
         <% } %>
         <div class="article__data">
             <div class="article__split">

@@ -62,9 +62,7 @@ exports.postCreateArticle = async (req, res, next) => {
                 },
                 (error, doc) => {
                     if (error) res.redirect('/');
-                    else {
-                        res.redirect(`/news/${doc.category}/${doc._id.toHexString()}`);
-                    }
+                    else res.redirect(`/news/${doc.category}/${doc._id.toHexString()}`);
                 },
             );
         } else {
@@ -145,9 +143,7 @@ exports.postEditArticle = async (req, res, next) => {
                 },
                 (error, doc) => {
                     if (error) res.redirect('/');
-                    else {
-                        res.redirect(`/news/${doc.category}/${doc._id.toHexString()}`);
-                    }
+                    else res.redirect(`/news/${doc.category}/${doc._id.toHexString()}`);
                 },
             );
         } else {
