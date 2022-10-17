@@ -3,24 +3,20 @@
 const Article = require('../../models/Article');
 const User = require('../../models/User');
 
-exports.loadMoreNews = (req, res, next) => {
-    const lastArticleId = req.query.doc;
+exports.loadMoreNews = async (req, res, next) => {
+    let lastArticleId = req.query.doc;
 
-    // Fetch articles
-    // Populate User in every article
-    // Send json data of these articles to frontend
+    const category = req.headers.referer.split('/').pop();
+    const categoryCapitalized = category.charAt(0).toUpperCase() + category.slice(1);
 
-    // Article.filter()
-
-    const articles = [];
-
-    const updatedArticle = {...Article};
-
-    updatedArticle.author = User;
-
-    for (let i = 0; i < 9; i++) {
-        articles.push(updatedArticle);
-    }
+    const articles = await Article.find({category: categoryCapitalized, _id: {$lt: lastArticleId}})
+        .sort({_id: -1})
+        .populate({
+            path: 'author',
+            model: 'User',
+        })
+        .limit(9)
+        .exec();
 
     res.json(articles);
 };

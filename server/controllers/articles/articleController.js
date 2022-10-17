@@ -20,6 +20,7 @@ exports.getLifestyle = async (req, res, next) => renderArticles(req, res, next, 
 const renderArticles = async (req, res, next, path, category) => {
     try {
         const articles = await Article.find({category: category})
+            .sort({_id: -1})
             .populate({
                 path: 'author',
                 model: 'User',
@@ -27,11 +28,15 @@ const renderArticles = async (req, res, next, path, category) => {
             .limit(9)
             .exec();
 
+        let lastArticleId;
+        if (articles.length > 0) lastArticleId = articles[articles.length - 1]._id;
+
         res.render('articles', {
             title: category + ' | BayBank - the best solution for both individuals and companies',
             path: path,
             active: category,
             articles: articles,
+            lastArticleId: lastArticleId,
         });
     } catch (error) {
         console.log(error);
